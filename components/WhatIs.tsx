@@ -117,7 +117,7 @@ const WhatIs = () => {
               Lorem ipsum
             </p>
             <h2 className="wi-title mt-3 font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl">
-              <span className="gold-text">DOLOR?</span>
+              <span className="cyan-text">DOLOR?</span>
             </h2>
 
             <div className="mx-auto mt-10 max-w-3xl space-y-6 text-center text-base leading-relaxed text-white/75 md:text-lg">

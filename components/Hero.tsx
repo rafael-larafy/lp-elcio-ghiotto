@@ -157,7 +157,7 @@ const Hero = () => {
             </span>
             <span className="hero-headline-line block">adipiscing elit</span>
             <span className="hero-headline-line block">
-              sed <span className="gold-text">eiusmod</span> do
+              sed <span className="cyan-text">eiusmod</span> do
             </span>
             <span className="hero-headline-line block">tempor incididunt.</span>
           </h1>
@@ -240,7 +240,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* yellow scrolling marquee strip */}
+      {/* cyan scrolling marquee strip */}
       <div className="relative mt-24 overflow-hidden border-y border-white/5">
         <div className="flex w-max marquee py-3">
           {Array.from({ length: 2 }).map((_, repeat) => (

@@ -132,10 +132,10 @@ const modules: Module[] = [
 
 const ModuleCard = ({ mod, index }: { mod: Module; index: number }) => {
   const [open, setOpen] = useState(index === 0);
-  const contentRef = useRef<HTMLDivElement | null>(null);
+  const displayNumber = index + 1;
 
   return (
-    <div className="ca-mod-card card-gold-border overflow-hidden transition-all duration-300">
+    <div className="mod-card-inner ca-mod-card card-cyan-border overflow-hidden rounded-2xl border-2 border-[#77e4ff]/55 bg-[#013a52] shadow-[0_0_24px_-8px_rgba(119,228,255,0.35)] transition-shadow duration-300 hover:border-[#77e4ff]/90 hover:shadow-[0_0_32px_-6px_rgba(119,228,255,0.45)]">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -145,13 +145,13 @@ const ModuleCard = ({ mod, index }: { mod: Module; index: number }) => {
         <div className="flex items-start gap-5">
           <span
             aria-hidden="true"
-            className="flex-center h-11 w-11 shrink-0 rounded-md bg-[#77e4ff]/15 font-display text-sm font-extrabold text-[#77e4ff]"
+            className="flex-center h-14 w-14 shrink-0 rounded-xl border border-[#77e4ff]/40 bg-[#012e43] font-display text-lg font-black tabular-nums text-[#77e4ff] md:h-16 md:w-16 md:text-xl"
           >
-            {mod.number}
+            {displayNumber}
           </span>
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#9aebff]">
-              Lorem {mod.number}
+              Lorem · {String(displayNumber).padStart(2, "0")}
             </p>
             <h3 className="mt-1 font-display text-base font-extrabold text-white md:text-lg">
               {mod.title}
@@ -168,7 +168,6 @@ const ModuleCard = ({ mod, index }: { mod: Module; index: number }) => {
       </button>
 
       <div
-        ref={contentRef}
         className="grid transition-[grid-template-rows] duration-500 ease-in-out"
         style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >
@@ -208,17 +207,28 @@ const Modules = () => {
         },
       });
 
-      gsap.from(".ca-mod-card", {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power3.out",
-        stagger: 0.06,
-        scrollTrigger: {
-          trigger: ".mods-grid",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
+      // Viewport: alternate slide from left (→) and from right (←)
+      const wraps = gsap.utils.toArray<HTMLElement>(".mod-card-wrap");
+      wraps.forEach((el, i) => {
+        // Par: entrada da esquerda (efeito slideRight). Ímpar: da direita (slideLeft).
+        const fromX = i % 2 === 0 ? -72 : 72;
+
+        gsap.fromTo(
+          el,
+          { x: fromX, opacity: 0, force3D: true },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              end: "top 40%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
       });
     },
     { scope: containerRef }
@@ -238,7 +248,7 @@ const Modules = () => {
             Lorem ipsum dolor
           </p>
           <h2 className="mods-title mt-3 font-display text-3xl font-extrabold leading-tight md:text-5xl">
-            Sit <span className="gold-text">amet consectetur</span> adipiscing!
+            Sit <span className="cyan-text">amet consectetur</span> adipiscing!
           </h2>
           <p className="mods-sub mx-auto mt-5 max-w-xl text-sm text-white/65 md:text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -247,16 +257,18 @@ const Modules = () => {
           </p>
         </div>
 
-        <div className="mods-grid mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-4">
+        <div className="mods-grid mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-5 overflow-x-hidden">
           {modules.map((m, i) => (
-            <ModuleCard key={m.number} mod={m} index={i} />
+            <div key={m.number} className="mod-card-wrap will-change-transform">
+              <ModuleCard mod={m} index={i} />
+            </div>
           ))}
         </div>
 
         <div className="mt-12 flex justify-center">
           <a
             href="#pricing"
-            className="btn-gold group inline-flex items-center gap-2"
+            className="btn-cyan group inline-flex items-center gap-2"
           >
             <span className="relative inline-flex items-center overflow-hidden">
               <span className="block transition-transform duration-500 ease-out group-hover:-translate-y-[140%]">

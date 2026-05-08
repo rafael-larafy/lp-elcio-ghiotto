@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import PainPoints from "@/components/PainPoints";
 import WhatIs from "@/components/WhatIs";
 import ForWhom from "@/components/ForWhom";
-import YellowBanner from "@/components/YellowBanner";
+import Banner from "@/components/Banner";
 import CourseAccess from "@/components/CourseAccess";
 import Testimonials from "@/components/Testimonials";
 import Modules from "@/components/Modules";
@@ -19,7 +19,7 @@ export default function Home() {
       <PainPoints />
       <WhatIs />
       <ForWhom />
-      <YellowBanner />
+      <Banner />
       <CourseAccess />
       <Testimonials />
       <Modules />

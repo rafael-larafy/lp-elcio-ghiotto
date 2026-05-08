@@ -200,7 +200,7 @@ const Mentor = () => {
               </p>
 
               <h2 className="mt-3 font-display text-4xl font-extrabold text-white md:text-6xl">
-                Lorem Ipsum <span className="gold-text">Dolor</span>
+                Lorem Ipsum <span className="cyan-text">Dolor</span>
               </h2>
 
               <div className="mt-8 space-y-4 text-sm leading-relaxed text-white/75 md:text-base">

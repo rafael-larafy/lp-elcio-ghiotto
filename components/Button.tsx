@@ -8,30 +8,30 @@ type ButtonProps = {
   title: ReactNode;
   rightIcon?: ReactNode;
   leftIcon?: ReactNode;
-  variant?: "gold" | "ghost";
+  variant?: "cyan" | "ghost";
   className?: string;
   href?: string;
   onClick?: () => void;
 };
 
 /**
- * Gold pill CTA used across the FGLF landing page.
- * - `gold` variant: filled gradient pill (primary CTA on every section)
- * - `ghost` variant: outlined gold border (secondary CTA)
+ * Cyan pill CTA used across the landing page.
+ * - `cyan` variant: filled gradient pill (primary CTA on every section)
+ * - `ghost` variant: outlined cyan border (secondary CTA)
  */
 const Button = ({
   id,
   title,
   rightIcon,
   leftIcon,
-  variant = "gold",
+  variant = "cyan",
   className,
   href,
   onClick,
 }: ButtonProps) => {
   const classes = clsx(
     "group",
-    variant === "gold" ? "btn-gold" : "btn-gold-ghost",
+    variant === "cyan" ? "btn-cyan" : "btn-cyan-ghost",
     className
   );
 

@@ -71,7 +71,7 @@ const Pricing = () => {
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-50" />
 
-      {/* Background gold chart */}
+      {/* Background cyan chart */}
       <svg
         viewBox="0 0 600 400"
         className="pointer-events-none absolute right-0 top-1/2 h-[80%] w-[55%] -translate-y-1/2 opacity-20"
@@ -97,11 +97,11 @@ const Pricing = () => {
 
       <div className="container-page relative">
         <div className="mx-auto max-w-3xl">
-          <div className="card-gold-border mx-auto p-8 md:p-12">
+          <div className="card-cyan-border mx-auto p-8 md:p-12">
             <div className="text-center">
               <h2 className="pr-title font-display text-3xl font-extrabold leading-tight md:text-4xl">
                 Lorem ipsum dolor <br />
-                sit <span className="gold-text">amet consectetur?</span>
+                sit <span className="cyan-text">amet consectetur?</span>
               </h2>
               <p className="pr-title mt-3 text-xs uppercase tracking-[0.25em] text-white/55">
                 Sed do eiusmod tempor incididunt
