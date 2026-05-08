@@ -7,12 +7,12 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const YellowBanner = () => {
+const Banner = () => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
-      gsap.from(".yb-text", {
+      gsap.from(".banner-text", {
         y: 30,
         opacity: 0,
         duration: 0.9,
@@ -28,7 +28,7 @@ const YellowBanner = () => {
   );
 
   return (
-    <div ref={ref} className="yellow-strip relative isolate py-5">
+    <div ref={ref} className="cyan-strip relative isolate py-5">
       {/* subtle texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-15"
@@ -38,7 +38,7 @@ const YellowBanner = () => {
           backgroundSize: "30px 30px",
         }}
       />
-      <p className="yb-text relative text-center font-display text-sm font-medium tracking-wide text-[#012e43] md:text-base">
+      <p className="banner-text relative text-center font-display text-sm font-medium tracking-wide text-[#012e43] md:text-base">
         Lorem ipsum dolor sit amet.{" "}
         <span className="font-extrabold">
           Consectetur adipiscing elit, sed do eiusmod tempor!
@@ -48,4 +48,4 @@ const YellowBanner = () => {
   );
 };
 
-export default YellowBanner;
+export default Banner;

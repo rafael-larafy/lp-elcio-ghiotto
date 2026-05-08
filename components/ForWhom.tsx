@@ -96,7 +96,7 @@ const ForWhom = () => {
           </p>
           <h2 className="fw-title mt-3 font-display text-3xl font-extrabold leading-tight text-white md:text-5xl">
             Sit amet consectetur <br className="hidden md:block" />
-            <span className="gold-text">adipiscing elit?</span>
+            <span className="cyan-text">adipiscing elit?</span>
           </h2>
 
           <ul className="fw-list mt-10 space-y-6">

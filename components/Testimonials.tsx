@@ -102,7 +102,7 @@ const Testimonials = () => {
           </p>
           <h2 className="tt-title font-display text-3xl font-extrabold leading-tight md:text-5xl">
             Sed ut{" "}
-            <span className="gold-text">perspiciatis</span> unde
+            <span className="cyan-text">perspiciatis</span> unde
             <br className="hidden md:block" /> omnis iste natus error sit.
           </h2>
         </div>
@@ -120,7 +120,7 @@ const Testimonials = () => {
                   className="flex-shrink-0 px-2"
                   style={{ width: `${100 / testimonials.length}%` }}
                 >
-                  <div className="card-gold-border flex flex-col items-center gap-6 p-8 text-center md:p-12">
+                  <div className="card-cyan-border flex flex-col items-center gap-6 p-8 text-center md:p-12">
                     <div className="flex gap-1 text-[#77e4ff]">
                       {Array.from({ length: 5 }).map((_, idx) => (
                         <TiStarFullOutline key={idx} className="text-xl" />

@@ -80,7 +80,7 @@ const CourseAccess = () => {
         <div className="text-center">
           <h2 className="ca-title font-display text-3xl font-extrabold leading-tight md:text-5xl">
             Lorem ipsum dolor{" "}
-            <span className="gold-text">sit amet consectetur</span>
+            <span className="cyan-text">sit amet consectetur</span>
             <br className="hidden sm:block" /> adipiscing elit eiusmod!
           </h2>
           <p className="ca-sub mx-auto mt-4 max-w-md text-base text-white/60 md:text-lg">
@@ -93,7 +93,7 @@ const CourseAccess = () => {
           {cards.map((c, idx) => (
             <div
               key={idx}
-              className="ca-card card-gold-border flex flex-col items-center justify-center gap-2 p-7 text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.03]"
+              className="ca-card card-cyan-border flex flex-col items-center justify-center gap-2 p-7 text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.03]"
             >
               <span className="flex-center mb-3 h-14 w-14 rounded-xl bg-[#77e4ff]/15 text-3xl text-[#77e4ff]">
                 {c.icon}
