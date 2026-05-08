@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #012e43;
+  --color-foreground: #ffffff;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-manrope), system-ui, sans-serif;
+
+  /* cyan accent palette (replaces the gold tones) */
+  --color-cyan-50: #d6f7ff;
+  --color-cyan-100: #b8f1ff;
+  --color-cyan-200: #9aebff;
+  --color-cyan-300: #77e4ff;
+  --color-cyan-400: #3eb8e6;
+  --color-cyan-500: #2196d6;
+  --color-cyan-600: #0e6f9f;
+
+  /* deep navy palette (replaces the inky blacks) */
+  --color-ink-900: #012e43;
+  --color-ink-800: #013a52;
+  --color-ink-700: #024260;
+  --color-ink-600: #024d6c;
+  --color-ink-500: #02526a;
+}
+
+:root {
+  --background: #012e43;
+  --foreground: #ffffff;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* selection */
+::selection {
+  background-color: #77e4ff;
+  color: #012e43;
+}
+
+/* subtle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #012e43;
+}
+::-webkit-scrollbar-thumb {
+  background: #024d6c;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #77e4ff;
+}
+
+/* ----------------------------------------------------------------- */
+/*  Utilities                                                        */
+/* ----------------------------------------------------------------- */
+
+@utility font-display {
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+}
+
+/* cyan gradient text */
+@utility gold-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    180deg,
+    #c2f3ff 0%,
+    #77e4ff 45%,
+    #3eb8e6 100%
+  );
+}
+
+/* dotted/grid background */
+@utility bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 70px 70px;
+}
+
+@utility bg-grid-fade {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 90px 90px;
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 30%,
+    transparent 75%
+  );
+}
+
+/* cyan border */
+@utility border-gold {
+  border-color: rgba(119, 228, 255, 0.6);
+}
+
+/* CTA button base — cyan pill (replaces former gold pill) */
+@utility btn-gold {
+  @apply relative inline-flex w-fit cursor-pointer items-center justify-center gap-2
+         rounded-full px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-[#012e43]
+         transition-transform duration-300 ease-out
+         hover:scale-[1.02] active:scale-[0.98];
+  background: linear-gradient(180deg, #b8f1ff 0%, #77e4ff 60%, #3eb8e6 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -2px 0 rgba(1, 46, 67, 0.18),
+    0 12px 40px -12px rgba(119, 228, 255, 0.55);
+}
+
+@utility btn-gold-ghost {
+  @apply relative inline-flex w-fit cursor-pointer items-center justify-center gap-2
+         rounded-full border border-[#77e4ff]/70 px-6 py-3 text-xs font-bold uppercase
+         tracking-[0.18em] text-[#9aebff] transition-colors duration-300
+         hover:bg-[#77e4ff] hover:text-[#012e43];
+}
+
+/* underline for animated word reveal */
+.highlight-underline {
+  position: relative;
+  display: inline-block;
+}
+.highlight-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.05em;
+  height: 0.45em;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 55%,
+    rgba(119, 228, 255, 0.95) 55%,
+    rgba(119, 228, 255, 0.95) 100%
+  );
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+/* glassy card with cyan-tinted border */
+@utility card-dark {
+  @apply relative rounded-2xl border border-white/10 bg-[#013a52]/80 backdrop-blur-sm;
+}
+
+.card-gold-border {
+  position: relative;
+  border-radius: 1rem;
+  background: #013a52;
+}
+.card-gold-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    140deg,
+    rgba(119, 228, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(255, 255, 255, 0.04) 65%,
+    rgba(119, 228, 255, 0.45) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* divider line */
+@utility hairline {
+  @apply h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent;
+}
+
+/* cyan strip banner */
+@utility yellow-strip {
+  background: linear-gradient(180deg, #77e4ff 0%, #3eb8e6 100%);
+}
+
+/* ticker / scroll-y reveal helpers */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* keyframe: subtle shine on accent elements */
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.shine {
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background-size: 200% 100%;
+  animation: shine 3.2s linear infinite;
+}
+
+/* up-and-right arrow vector matches the reference logo motif. */
+.arrow-glyph {
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M20 78 L78 20 M40 20 L78 20 L78 58' stroke='%2377e4ff' stroke-width='8' stroke-linecap='square' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* horizontal marquee for ticker bands */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: marquee 30s linear infinite;
+}
