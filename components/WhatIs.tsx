@@ -101,7 +101,7 @@ const WhatIs = () => {
               className="mx-auto md:mx-0"
             >
               <path
-                d="M40 160 L160 40 M70 40 L160 40 L160 130"
+                d="M40 150 L155 40 M70 40 L160 40 L160 130"
                 stroke="#77e4ff"
                 strokeWidth="14"
                 strokeLinecap="square"
@@ -114,39 +114,49 @@ const WhatIs = () => {
           {/* heading */}
           <div className="wi-content text-center lg:col-span-9">
             <p className="wi-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-white/60">
-              Lorem ipsum
+              As maiores mentes tributárias
             </p>
-            <h2 className="wi-title mt-3 font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl">
-              <span className="cyan-text">DOLOR?</span>
+            <h2 className="wi-title mt-3 font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+              Quem tem a missão de eliminar as{" "}
+              <span className="cyan-text">planilhas tributárias</span> no Brasil
             </h2>
 
-            <div className="mx-auto mt-10 max-w-3xl space-y-6 text-center text-base leading-relaxed text-white/75 md:text-lg">
-              <p className="wi-paragraph">
-                Lorem ipsum{" "}
-                <span className="font-bold text-white">dolor sit amet</span>,
-                consectetur adipiscing elit, sed do eiusmod{" "}
-                <span className="font-bold text-white">tempor incididunt</span>{" "}
-                ut labore et{" "}
-                <span className="font-bold text-white">dolore magna aliqua</span>{" "}
-                ut <span className="font-bold text-[#77e4ff]">enim ad minim</span>{" "}
-                veniam.
+            <div className="mx-auto mt-10 max-w-3xl space-y-8 text-base leading-relaxed text-white/75 md:text-lg">
+              <p className="wi-paragraph text-left">
+                <span className="mb-1 block font-bold text-white">
+                  Waldir de Lara
+                </span>
+                Criador do LaraTAX e uma das maiores mentes tributárias do
+                Brasil, Waldir já recuperou{" "}
+                <span className="font-bold text-white">
+                  mais de 1.8 bilhões de reais
+                </span>{" "}
+                em 20 anos de carreira e antecipou os impactos da{" "}
+                <span className="font-bold text-[#77e4ff]">
+                  Reforma Tributária
+                </span>
+                .
               </p>
 
-              <p className="wi-paragraph">
-                Quis nostrud{" "}
-                <span className="font-bold text-white">exercitation</span>{" "}
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in{" "}
-                <span className="font-bold text-white">reprehenderit</span> in
-                voluptate velit esse!
+              <p className="wi-paragraph text-right">
+                <span className="mb-1 block font-bold text-white">
+                  Elcio Ghioto
+                </span>
+                Com mais de 20 anos de experiência em consultoria tributária e
+                passagem de{" "}
+                <span className="font-bold text-white">
+                  11 anos pela KPMG Brasil
+                </span>
+                , Elcio se consolidou como uma referência nacional em estratégia
+                fiscal, recuperação de créditos e planejamento tributário.
               </p>
             </div>
 
             <div className="wi-cta mt-12 flex justify-center">
               <Button
-                title="Lorem ipsum"
+                title="Trabalhe com as maiores mentes tributárias"
                 rightIcon={<TiArrowRight />}
-                href="#for-whom"
+                href="#pricing"
               />
             </div>
           </div>

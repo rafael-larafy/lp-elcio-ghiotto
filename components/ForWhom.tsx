@@ -11,26 +11,37 @@ import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** Asset em public/img — espaço no nome → URL codificado */
+const FOR_WHOM_IMAGE_SRC = `/img/${encodeURIComponent("Group 5.png")}`;
+
 const points = [
   {
-    bold: "lorem ipsum",
-    rest: "dolor sit amet, consectetur adipiscing elit.",
+    title: "Procuração e certificados",
+    rest: "Registre o CNPJ do cliente e efetue o upload do certificado digital ou da procuração eletrônica.",
   },
   {
-    bold: "sed do eiusmod",
-    rest: "tempor incididunt ut labore et dolore magna.",
+    title: "Download de obrigações",
+    rest: "Documentos são capturados automaticamente a partir de fontes oficiais por meio de inteligência artificial.",
   },
   {
-    bold: "ut enim ad minim",
-    rest: "veniam, quis nostrud exercitation ullamco laboris.",
+    title: "Estruturação dos dados",
+    rest: "Os dados e documentos coletados são processados e padronizados com um sistema de validação integrado.",
   },
   {
-    bold: "duis aute irure",
-    rest: "dolor in reprehenderit in voluptate velit esse cillum.",
+    title: "Processamento e cruzamento",
+    rest: "O cruzamento dos dados, cálculo de materialidade e a identificação de oportunidades são realizados com o uso de inteligência artificial e motor de regras.",
   },
   {
-    bold: "excepteur sint",
-    rest: "occaecat cupidatat non proident, sunt in culpa qui officia.",
+    title: "Diagnósticos & Dashboards",
+    rest: "São construídos 74 painéis de análise de oportunidade com base em todo o cruzamento de dados.",
+  },
+  {
+    title: "Análise do consultor",
+    rest: "Consultor analisa os insights através dos painéis e cria a estratégia de recuperação dos melhores tributos.",
+  },
+  {
+    title: "Retificação integrada",
+    rest: "Após a análise, já realize a retificação diretamente pelo sistema, sem burocracia.",
   },
 ];
 
@@ -92,24 +103,33 @@ const ForWhom = () => {
         {/* Text */}
         <div className="lg:col-span-7">
           <p className="fw-eyebrow text-xs font-bold uppercase tracking-[0.3em] text-[#9aebff]">
-            Lorem ipsum dolor
+            Como funciona
           </p>
           <h2 className="fw-title mt-3 font-display text-3xl font-extrabold leading-tight text-white md:text-5xl">
-            Sit amet consectetur <br className="hidden md:block" />
-            <span className="cyan-text">adipiscing elit?</span>
+            Faça parte do time dos{" "}
+            <span className="cyan-text">tributaristas revolucionários</span>
           </h2>
+          <p className="fw-eyebrow mt-4 text-base text-white/70 md:text-lg">
+            Entenda o processo de quem já revolucionou muitos negócios.
+          </p>
 
-          <ul className="fw-list mt-10 space-y-6">
+          <ul className="fw-list mt-10 space-y-5">
             {points.map((p, idx) => (
               <li
                 key={idx}
                 className="fw-item flex items-start gap-4 text-base text-white/75 md:text-lg"
               >
-                <span className="mt-2 inline-block h-1.5 w-3 shrink-0 bg-[#77e4ff]" />
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#77e4ff]/40 bg-[#77e4ff]/10 font-display text-sm font-extrabold tabular-nums text-[#77e4ff]"
+                >
+                  {idx + 1}
+                </span>
                 <span>
-                  Sed ut perspiciatis{" "}
-                  <span className="font-semibold text-white">{p.bold}</span>{" "}
-                  {p.rest}
+                  <span className="block font-semibold text-white">
+                    {p.title}
+                  </span>
+                  <span className="mt-1 block">{p.rest}</span>
                 </span>
               </li>
             ))}
@@ -117,7 +137,7 @@ const ForWhom = () => {
 
           <div className="mt-10">
             <Button
-              title="Lorem ipsum"
+              title="Quero ser um tributarista revolucionário"
               rightIcon={<TiArrowRight />}
               href="#pricing"
             />
@@ -128,11 +148,12 @@ const ForWhom = () => {
         <div className="lg:col-span-5">
           <div className="fw-image relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-[28px]">
             <Image
-              src="https://placehold.co/600x800/024260/77e4ff?text=Lorem+ipsum"
-              alt="Lorem ipsum"
+              src={FOR_WHOM_IMAGE_SRC}
+              alt="Palestrante com microfone em fundo azul"
               fill
-              sizes="(max-width: 1024px) 80vw, 35vw"
+              sizes="(max-width: 1024px) 80vw, (max-width: 1280px) 35vw, 448px"
               className="object-cover"
+              unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#012e43]/50 via-transparent to-transparent" />
 

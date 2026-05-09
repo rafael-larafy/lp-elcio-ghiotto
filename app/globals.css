@@ -102,6 +102,11 @@ body {
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 90px 90px;
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 30%,
+    transparent 75%
+  );
   mask-image: radial-gradient(
     ellipse at center,
     black 30%,
@@ -120,7 +125,12 @@ body {
          rounded-full px-7 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-[#012e43]
          transition-transform duration-300 ease-out
          hover:scale-[1.02] active:scale-[0.98];
-  background: linear-gradient(180deg, #b8f1ff 0%, #77e4ff 60%, #3eb8e6 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(184, 241, 255, 1) 0%,
+    rgba(119, 228, 255, 1) 0%,
+    rgba(62, 184, 230, 1) 100%
+  );
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.55),
     inset 0 -2px 0 rgba(1, 46, 67, 0.18),
@@ -132,6 +142,15 @@ body {
          rounded-full border border-[#77e4ff]/70 px-6 py-3 text-xs font-bold uppercase
          tracking-[0.18em] text-[#9aebff] transition-colors duration-300
          hover:bg-[#77e4ff] hover:text-[#012e43];
+}
+
+/* Hero headline — uma linha lógica por bloco; fluido entre viewports (evita flex + largura fixa) */
+.hero-headline-line {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  border: 0;
 }
 
 /* underline for animated word reveal */
@@ -256,3 +275,4 @@ body {
 .marquee {
   animation: marquee 30s linear infinite;
 }
+

@@ -11,6 +11,11 @@ import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const HERO_DUO_SRC = `/img/${encodeURIComponent("Frame 4-3.png")}`;
+/** Dimensões intrínsecas do ficheiro (next/image usa isto para aspect ratio e srcset; tem de bater com o PNG real). */
+const HERO_DUO_WIDTH = 1393;
+const HERO_DUO_HEIGHT = 1080;
+
 const Hero = () => {
   const containerRef = useRef<HTMLElement | null>(null);
 
@@ -35,14 +40,15 @@ const Hero = () => {
           "-=0.4"
         )
         .from(
-          ".hero-image",
-          { x: 80, opacity: 0, duration: 1.1, ease: "power4.out" },
-          "-=1"
-        )
-        .from(
-          ".hero-image--small",
-          { x: -40, y: 30, opacity: 0, duration: 1, ease: "power3.out" },
-          "-=0.8"
+          ".hero-portrait",
+          {
+            x: 56,
+            opacity: 0,
+            duration: 1,
+            ease: "power4.out",
+            stagger: 0.15,
+          },
+          "-=0.85"
         )
         .from(
           ".hero-chart-line",
@@ -54,28 +60,7 @@ const Hero = () => {
             stagger: 0.08,
           },
           "-=1"
-        )
-        .from(
-          ".hero-floating",
-          {
-            y: 30,
-            opacity: 0,
-            duration: 1,
-            ease: "power2.out",
-            stagger: 0.12,
-          },
-          "-=1.2"
         );
-
-      // continuous subtle floating motion on numbers
-      gsap.to(".hero-floating", {
-        y: "+=10",
-        duration: 4,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-        stagger: { each: 0.6, repeat: -1, yoyo: true },
-      });
 
       // grid + chart parallax on scroll
       gsap.to(".hero-bg-grid", {
@@ -96,14 +81,14 @@ const Hero = () => {
     <section
       id="top"
       ref={containerRef}
-      className="relative isolate overflow-hidden bg-[#012e43] pt-32 pb-24 md:pt-36 md:pb-32"
+      className="relative isolate overflow-x-visible overflow-y-visible bg-[linear-gradient(180deg,rgba(1,46,67,1)_16%,rgba(119,228,255,1)_100%)] pt-32 pb-24 md:pt-36 md:pb-32"
     >
       {/* grid background */}
       <div className="hero-bg-grid pointer-events-none absolute inset-0 -z-10 bg-grid-fade" />
 
       {/* cyan ambient glow on the right */}
       <div
-        className="pointer-events-none absolute -right-32 top-1/2 -z-10 h-[640px] w-[640px] -translate-y-1/2 rounded-full opacity-60 blur-3xl"
+        className="pointer-events-none absolute -right-32 top-1/2 -z-10 h-[640px] w-[640px] -translate-y-1/2 rounded-full border border-black opacity-60 blur-3xl"
         style={{
           background:
             "radial-gradient(circle at center, rgba(119,228,255,0.35) 0%, rgba(119,228,255,0) 70%)",
@@ -138,36 +123,58 @@ const Hero = () => {
       </svg>
 
       <div className="container-page relative grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-        {/* TEXT COLUMN */}
-        <div className="lg:col-span-6">
+        {/* TEXT COLUMN — 5 colunas para liberar mais largura à imagem (+500px) */}
+        <div className="lg:col-span-5">
           <div className="hero-eyebrow mb-6 flex items-center gap-3">
             <span className="h-px w-10 bg-[#77e4ff]" />
             <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#9aebff]">
-              Lorem ipsum dolor
+              LaraTAX
             </span>
           </div>
 
-          <h1 className="font-display text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl md:text-6xl lg:text-[3.6rem]">
-            <span className="hero-headline-line block">Lorem ipsum </span>
-            <span className="hero-headline-line block">
-              <span className="text-white">dolor sit</span>
+          <h1 className="hero-headline font-display text-4xl font-extrabold leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-[3.6rem] lg:leading-[1.05]">
+            <span className="hero-headline-line">Menos planilhas, </span>
+            <span className="hero-headline-line">
+              <span className="cyan-text">mais resultado</span> tributário
             </span>
-            <span className="hero-headline-line block">
-              amet consectetur
-            </span>
-            <span className="hero-headline-line block">adipiscing elit</span>
-            <span className="hero-headline-line block">
-              sed <span className="cyan-text">eiusmod</span> do
-            </span>
-            <span className="hero-headline-line block">tempor incididunt.</span>
           </h1>
 
-          <p className="hero-sub mt-7 max-w-md text-base leading-relaxed text-white/70 md:text-lg">
-            <span className="font-semibold text-white">Lorem</span> ipsum dolor
-            sit amet, consectetur adipiscing elit, sed do{" "}
-            <span className="font-semibold text-white">eiusmod tempor</span>{" "}
-            incididunt.
-          </p>
+          <ul className="hero-sub mt-8 max-w-md space-y-5 text-[15px] leading-relaxed text-white/75 md:text-base">
+            <li className="flex items-start gap-4">
+              <span
+                aria-hidden="true"
+                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#77e4ff]/30 bg-[#77e4ff]/10 text-lg shadow-[0_0_24px_-8px_rgba(119,228,255,0.6)]"
+              >
+                ⏰
+              </span>
+              <div className="border-l border-white/10 pl-4">
+                <p className="font-semibold tracking-tight text-white">
+                  5 anos em 40 minutos
+                </p>
+                <p className="mt-1">
+                  Diagnóstico completo de oportunidades tributárias dos últimos
+                  5 anos em até 40 minutos.
+                </p>
+              </div>
+            </li>
+            <li className="flex items-start gap-4">
+              <span
+                aria-hidden="true"
+                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#77e4ff]/30 bg-[#77e4ff]/10 text-lg shadow-[0_0_24px_-8px_rgba(119,228,255,0.6)]"
+              >
+                🤖
+              </span>
+              <div className="border-l border-white/10 pl-4">
+                <p className="font-semibold tracking-tight text-white">
+                  O fim da era manual
+                </p>
+                <p className="mt-1">
+                  Automatização de recuperação de tributos feita por
+                  Inteligência Artificial. Sem trabalho manual.
+                </p>
+              </div>
+            </li>
+          </ul>
 
           <div className="hero-cta mt-9">
             <Button
@@ -178,93 +185,55 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* IMAGE COLUMN */}
-        <div className="relative lg:col-span-6">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[560px]">
-            {/* floating revenue numbers */}
-            <span
-              className="hero-floating absolute -top-2 right-6 font-display text-3xl font-extrabold tracking-wider text-[#77e4ff]/80 md:text-5xl"
-              aria-hidden="true"
-            >
-              26.417
-            </span>
-            <span
-              className="hero-floating absolute -bottom-4 left-2 font-display text-2xl font-extrabold tracking-wider text-[#77e4ff]/70 md:text-4xl"
-              aria-hidden="true"
-            >
-              06.381
-            </span>
-            <span
-              className="hero-floating absolute right-2 top-1/2 font-display text-xl font-bold tracking-widest text-[#77e4ff]/60 md:text-2xl"
-              aria-hidden="true"
-            >
-              26
-            </span>
-
-            {/* big colour photo */}
-            <div className="hero-image absolute inset-0 z-10 overflow-hidden rounded-[28px]">
-              <Image
-                src="https://placehold.co/700x900/024260/77e4ff?text=Lorem+ipsum"
-                alt="Lorem ipsum"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#012e43]/40 via-transparent to-[#012e43]/10" />
-            </div>
-
-            {/* secondary portrait */}
-            <div className="hero-image--small absolute -left-6 bottom-10 z-20 hidden h-44 w-32 overflow-hidden rounded-2xl ring-2 ring-[#012e43] sm:block md:h-56 md:w-40">
-              <Image
-                src="https://placehold.co/200x300/012e43/9aebff?text=Dolor"
-                alt="Dolor sit"
-                fill
-                sizes="200px"
-                className="object-cover"
-              />
-            </div>
-
-            {/* small cyan corner accents */}
-            <span
-              aria-hidden="true"
-              className="hero-floating absolute -bottom-3 -right-3 z-30 h-12 w-12 rounded-md bg-[#77e4ff]"
-              style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }}
-            />
-            <span
-              aria-hidden="true"
-              className="hero-floating absolute -top-4 -right-1 z-30 h-8 w-8 rounded-md bg-[#77e4ff]/80"
-              style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }}
+        {/* Waldir + Elcio — arte única à direita do texto */}
+        <div className="relative flex min-h-0 min-w-0 items-center justify-center lg:col-span-7 lg:justify-end lg:overflow-visible">
+          <div className="hero-portrait w-full max-w-xl sm:max-w-2xl lg:mx-0 lg:w-[765px] lg:max-w-[725px] lg:shrink-0">
+            <Image
+              src={HERO_DUO_SRC}
+              alt="Waldir de Lara e Elcio Ghioto — sócios LaraTax"
+              width={HERO_DUO_WIDTH}
+              height={HERO_DUO_HEIGHT}
+              priority
+              unoptimized
+              className="h-auto w-full select-none object-contain drop-shadow-[0_14px_32px_rgba(0,0,0,0.28)]"
             />
           </div>
         </div>
       </div>
 
       {/* cyan scrolling marquee strip */}
-      <div className="relative mt-24 overflow-hidden border-y border-white/5">
+      <div className="relative mt-24 overflow-hidden">
         <div className="flex w-max marquee py-3">
           {Array.from({ length: 2 }).map((_, repeat) => (
             <div
               key={repeat}
-              className="flex shrink-0 items-center gap-12 px-6 text-xs font-bold uppercase tracking-[0.3em] text-[#77e4ff]"
+              className="flex shrink-0 items-center gap-3 px-3"
             >
               {[
-                "Lorem ipsum dolor sit amet…",
-                "+ consectetur adipiscing",
-                "Sed do eiusmod tempor",
-                "Ut enim ad minim",
-                "Duis aute irure dolor",
-                "+ excepteur sint occaecat",
+                "Limite de dados",
+                "Impossível escalar",
+                "Operação inconsistente",
+                "Muitos erros humanos",
+                "Processos manuais",
+                "Falta de visibilidade",
+                "Risco operacional",
+                "Retrabalho constante",
               ].map((text, idx) => (
-                <span key={idx} className="flex items-center gap-12">
+                <span
+                  key={idx}
+                  className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#0f4459] px-3.5 py-1.5 text-[13px] leading-none text-[#0f4459]"
+                >
+                  <span aria-hidden="true" className="opacity-60">
+                    x
+                  </span>
                   <span>{text}</span>
-                  <span className="text-[#77e4ff]/50">/</span>
                 </span>
               ))}
             </div>
           ))}
         </div>
       </div>
+
     </section>
   );
 };

@@ -4,30 +4,22 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
-import { TiArrowRight, TiTickOutline } from "react-icons/ti";
 
-import Button from "./Button";
+import LeadForm from "./LeadForm";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const items = [
-  { label: "Lorem ipsum dolor sit amet", price: "R$ 1.997,00" },
-  { label: "Consectetur adipiscing elit", price: "R$ 497,00" },
-  { label: "Sed do eiusmod tempor", price: "R$ 497,00" },
-  { label: "Ut labore et dolore magna", price: "R$ 497,00" },
-  { label: "Ut enim ad minim veniam quis", price: "R$ 497,00" },
-];
 
 const Pricing = () => {
   const containerRef = useRef<HTMLElement | null>(null);
 
   useGSAP(
     () => {
-      gsap.from(".pr-title", {
+      gsap.from(".pr-eyebrow, .pr-title, .pr-sub", {
         y: 30,
         opacity: 0,
         duration: 0.8,
         ease: "power3.out",
+        stagger: 0.1,
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 75%",
@@ -35,26 +27,13 @@ const Pricing = () => {
         },
       });
 
-      gsap.from(".pr-row", {
-        x: -30,
+      gsap.from(".pr-form", {
+        y: 40,
         opacity: 0,
-        duration: 0.6,
+        duration: 1,
         ease: "power3.out",
-        stagger: 0.08,
         scrollTrigger: {
-          trigger: ".pr-list",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      gsap.from(".pr-price", {
-        scale: 0.85,
-        opacity: 0,
-        duration: 0.7,
-        ease: "back.out(1.6)",
-        scrollTrigger: {
-          trigger: ".pr-price",
+          trigger: ".pr-form",
           start: "top 85%",
           toggleActions: "play none none reverse",
         },
@@ -96,80 +75,42 @@ const Pricing = () => {
       </svg>
 
       <div className="container-page relative">
-        <div className="mx-auto max-w-3xl">
-          <div className="card-cyan-border mx-auto p-8 md:p-12">
-            <div className="text-center">
-              <h2 className="pr-title font-display text-3xl font-extrabold leading-tight md:text-4xl">
-                Lorem ipsum dolor <br />
-                sit <span className="cyan-text">amet consectetur?</span>
-              </h2>
-              <p className="pr-title mt-3 text-xs uppercase tracking-[0.25em] text-white/55">
-                Sed do eiusmod tempor incididunt
-              </p>
-            </div>
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
+          {/* Heading column */}
+          <div className="lg:col-span-6">
+            <p className="pr-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-[#9aebff]">
+              Diagnóstico tributário
+            </p>
+            <h2 className="pr-title mt-3 font-display text-3xl font-extrabold leading-tight md:text-5xl">
+              Quem já preencheu esse formulário{" "}
+              <span className="cyan-text">
+                não voltou para as planilhas
+              </span>
+            </h2>
+            <p className="pr-sub mt-6 max-w-md text-base leading-relaxed text-white/70 md:text-lg">
+              Em poucos minutos, descubra quanto sua empresa pode recuperar e
+              economizar em tributos. Sem compromisso, sem custo.
+            </p>
 
-            <ul className="pr-list mt-10 space-y-3">
-              {items.map((item) => (
-                <li
-                  key={item.label}
-                  className="pr-row flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.02] px-5 py-4 text-sm md:text-base"
-                >
-                  <span className="flex items-center gap-3 text-white/85">
-                    <TiTickOutline className="text-lg text-[#77e4ff]" />
-                    {item.label}
-                  </span>
-                  <span className="font-mono text-xs font-bold text-[#77e4ff] line-through opacity-90 md:text-sm">
-                    {item.price}
-                  </span>
-                </li>
-              ))}
+            <ul className="pr-sub mt-8 space-y-3 text-sm text-white/65 md:text-base">
+              <li className="flex items-center gap-3">
+                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#77e4ff]" />
+                Análise dos últimos 5 anos em até 40 minutos
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#77e4ff]" />
+                Diagnóstico completo de oportunidades fiscais
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#77e4ff]" />
+                Atendimento por especialistas tributários
+              </li>
             </ul>
+          </div>
 
-            <div className="mt-10 text-center">
-              <p className="text-sm text-white/60">
-                Lorem{" "}
-                <span className="line-through decoration-[#77e4ff]">
-                  R$ 3.985,00
-                </span>
-              </p>
-
-              <div className="pr-price mx-auto mt-4 inline-flex items-end gap-3 rounded-2xl px-8 py-5"
-                style={{
-                  background:
-                    "linear-gradient(180deg, #b8f1ff 0%, #77e4ff 60%, #3eb8e6 100%)",
-                  boxShadow:
-                    "0 30px 60px -20px rgba(119,228,255,0.45), inset 0 1px 0 rgba(255,255,255,0.5)",
-                }}
-              >
-                <span className="font-display text-2xl font-extrabold text-[#012e43] md:text-3xl">
-                  10x
-                </span>
-                <span className="font-display text-5xl font-extrabold leading-none text-[#012e43] md:text-6xl">
-                  R$ 99,90
-                </span>
-              </div>
-
-              <p className="mt-4 text-xs text-white/55">
-                Ou <span className="font-semibold text-white">R$ 997,00</span>{" "}
-                lorem ipsum dolor.
-              </p>
-
-              <div className="mt-8 flex justify-center">
-                <Button
-                  title="Lorem ipsum"
-                  rightIcon={<TiArrowRight />}
-                  href="#"
-                />
-              </div>
-
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.2em] text-white/45">
-                <span>✓ Lorem ipsum dolor</span>
-                <span className="hidden md:inline">·</span>
-                <span>✓ Sit amet consectetur</span>
-                <span className="hidden md:inline">·</span>
-                <span>✓ Adipiscing elit</span>
-              </div>
-            </div>
+          {/* Form column */}
+          <div className="pr-form lg:col-span-6">
+            <LeadForm />
           </div>
         </div>
       </div>
