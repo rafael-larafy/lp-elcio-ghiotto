@@ -91,13 +91,13 @@ const Testimonials = () => {
     <section
       ref={containerRef}
       id="testimonials"
-      className="relative overflow-hidden bg-[#012e43] py-24 text-white md:py-32"
+      className="relative overflow-hidden bg-[#00091a] py-24 text-white md:py-32"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-40" />
 
       <div className="container-page relative">
         <div className="text-center">
-          <p className="tt-sub mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#9aebff]">
+          <p className="tt-sub mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#04ADE5]">
             Lorem ipsum
           </p>
           <h2 className="tt-title font-display text-3xl font-extrabold leading-tight md:text-5xl">
@@ -121,7 +121,7 @@ const Testimonials = () => {
                   style={{ width: `${100 / testimonials.length}%` }}
                 >
                   <div className="card-cyan-border flex flex-col items-center gap-6 p-8 text-center md:p-12">
-                    <div className="flex gap-1 text-[#77e4ff]">
+                    <div className="flex gap-1 text-[#04ADE5]">
                       {Array.from({ length: 5 }).map((_, idx) => (
                         <TiStarFullOutline key={idx} className="text-xl" />
                       ))}
@@ -130,7 +130,7 @@ const Testimonials = () => {
                       “{t.quote}”
                     </p>
                     <div className="flex items-center gap-4 pt-2">
-                      <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-[#77e4ff]/40">
+                      <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-[#04ADE5]/40">
                         <Image
                           src={t.avatar}
                           alt={t.name}
@@ -160,7 +160,7 @@ const Testimonials = () => {
               type="button"
               onClick={() => goTo(index - 1)}
               aria-label="Depoimento anterior"
-              className="flex-center h-11 w-11 rounded-full border border-white/15 text-white/80 transition hover:border-[#77e4ff] hover:text-[#77e4ff]"
+              className="flex-center h-11 w-11 rounded-full border border-white/15 text-white/80 transition hover:border-[#04ADE5] hover:text-[#04ADE5]"
             >
               <TiArrowLeft />
             </button>
@@ -174,7 +174,7 @@ const Testimonials = () => {
                   onClick={() => goTo(i)}
                   className={`h-1.5 rounded-full transition-all duration-300 ${
                     i === index
-                      ? "w-8 bg-[#77e4ff]"
+                      ? "w-8 bg-[#04ADE5]"
                       : "w-3 bg-white/25 hover:bg-white/50"
                   }`}
                 />
@@ -185,7 +185,7 @@ const Testimonials = () => {
               type="button"
               onClick={() => goTo(index + 1)}
               aria-label="Próximo depoimento"
-              className="flex-center h-11 w-11 rounded-full border border-white/15 text-white/80 transition hover:border-[#77e4ff] hover:text-[#77e4ff]"
+              className="flex-center h-11 w-11 rounded-full border border-white/15 text-white/80 transition hover:border-[#04ADE5] hover:text-[#04ADE5]"
             >
               <TiArrowRight />
             </button>

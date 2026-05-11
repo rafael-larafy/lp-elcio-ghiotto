@@ -51,7 +51,7 @@ const NavBar = () => {
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
         hasShadow
-          ? "bg-[#012e43]/85 backdrop-blur-md border-b border-white/5"
+          ? "bg-[#00091a]/85 backdrop-blur-md border-b border-white/5"
           : "bg-transparent"
       )}
     >
@@ -66,7 +66,7 @@ const NavBar = () => {
               key={item.href}
               href={item.href}
               className="text-xs font-medium uppercase tracking-[0.18em] text-white/70
-                         transition-colors duration-200 hover:text-[#9aebff]"
+                         transition-colors duration-200 hover:text-[#04ADE5]"
             >
               {item.label}
             </a>
@@ -74,7 +74,7 @@ const NavBar = () => {
         </nav>
 
         <Button
-          title="Quero meu diagnóstico"
+          title="Contrate o LaraTAX"
           href="#pricing"
           className="hidden sm:inline-flex"
         />

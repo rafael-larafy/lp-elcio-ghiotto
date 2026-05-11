@@ -57,12 +57,12 @@ const StatCounter = ({
 
   return (
     <div ref={ref} className="flex items-baseline gap-2 py-2">
-      <span className="font-display text-2xl font-extrabold text-[#012e43] md:text-3xl">
+      <span className="font-display text-2xl font-extrabold text-[#00091a] md:text-3xl">
         {prefix}
         {formatNumber(display)}
         {suffix}
       </span>
-      <span className="text-sm font-medium text-[#012e43]/80 md:text-base">
+      <span className="text-sm font-medium text-[#00091a]/80 md:text-base">
         {label}
       </span>
     </div>
@@ -120,7 +120,7 @@ const Mentor = () => {
       id="mentor"
       className="relative overflow-hidden py-20 md:py-28"
       style={{
-        background: "linear-gradient(180deg, #77e4ff 0%, #3eb8e6 100%)",
+        background: "linear-gradient(180deg, #04ADE5 0%, #04ADE5 100%)",
       }}
     >
       {/* texture */}
@@ -128,7 +128,7 @@ const Mentor = () => {
         className="pointer-events-none absolute inset-0 opacity-15"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(1,46,67,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(1,46,67,0.22) 1px, transparent 1px)",
+            "linear-gradient(rgba(0, 9, 26,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 9, 26,0.22) 1px, transparent 1px)",
           backgroundSize: "70px 70px",
         }}
       />
@@ -138,7 +138,7 @@ const Mentor = () => {
           {/* PORTRAIT + STATS */}
           <div className="lg:col-span-5">
             <div className="relative h-full">
-              <div className="mt-image relative aspect-[3/4] w-full overflow-hidden rounded-[28px] bg-[#012e43]">
+              <div className="mt-image relative aspect-[3/4] w-full overflow-hidden rounded-[28px] bg-[#00091a]">
                 <Image
                   src="https://placehold.co/600x800/012e43/77e4ff?text=Lorem+ipsum"
                   alt="Lorem ipsum"
@@ -151,25 +151,25 @@ const Mentor = () => {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(1,46,67,0) 50%, rgba(1,46,67,0.55) 100%)",
+                      "linear-gradient(180deg, rgba(0, 9, 26,0) 50%, rgba(0, 9, 26,0.55) 100%)",
                   }}
                 />
 
                 {/* dark corner accents */}
                 <span
                   aria-hidden="true"
-                  className="absolute -right-3 -top-3 h-10 w-10 bg-[#012e43]"
+                  className="absolute -right-3 -top-3 h-10 w-10 bg-[#00091a]"
                   style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%)" }}
                 />
                 <span
                   aria-hidden="true"
-                  className="absolute -bottom-3 -left-3 h-10 w-10 bg-[#012e43]"
+                  className="absolute -bottom-3 -left-3 h-10 w-10 bg-[#00091a]"
                   style={{ clipPath: "polygon(0 100%, 100% 100%, 0 0)" }}
                 />
               </div>
 
               {/* Stats card overlapping bottom */}
-              <div className="mt-card relative -mt-16 mx-3 rounded-2xl bg-white p-6 shadow-[0_30px_80px_-20px_rgba(1,46,67,0.45)] md:p-8">
+              <div className="mt-card relative -mt-16 mx-3 rounded-2xl bg-white p-6 shadow-[0_30px_80px_-20px_rgba(0, 9, 26,0.45)] md:p-8">
                 {stats.map((s) => (
                   <StatCounter
                     key={s.label}
@@ -192,10 +192,10 @@ const Mentor = () => {
 
           {/* BIO */}
           <div className="mt-bio lg:col-span-7">
-            <div className="card-dark relative h-full overflow-hidden rounded-[28px] border-white/5 bg-[#012e43] p-8 md:p-12">
+            <div className="card-dark relative h-full overflow-hidden rounded-[28px] border-white/5 bg-[#00091a] p-8 md:p-12">
               <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-30" />
 
-              <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#9aebff]">
+              <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#04ADE5]">
                 Lorem <span className="text-white/80">ipsum dolor sit amet</span>:
               </p>
 
@@ -238,7 +238,7 @@ const Mentor = () => {
                   <span className="font-bold text-white">voluptatum deleniti</span>.
                 </p>
                 <p>
-                  <span className="font-bold text-[#77e4ff]">LOREM IPSUM DOLOR SIT AMET CONSECTETUR</span>{" "}
+                  <span className="font-bold text-[#04ADE5]">LOREM IPSUM DOLOR SIT AMET CONSECTETUR</span>{" "}
                   adipiscing elit, sed do eiusmod tempor incididunt.
                 </p>
               </div>

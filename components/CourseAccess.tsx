@@ -72,7 +72,7 @@ const CourseAccess = () => {
   return (
     <section
       ref={containerRef}
-      className="relative overflow-hidden bg-[#012e43] py-24 text-white md:py-32"
+      className="relative overflow-hidden bg-[#00091a] py-24 text-white md:py-32"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-50" />
 
@@ -95,7 +95,7 @@ const CourseAccess = () => {
               key={idx}
               className="ca-card card-cyan-border flex flex-col items-center justify-center gap-2 p-7 text-center transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.03]"
             >
-              <span className="flex-center mb-3 h-14 w-14 rounded-xl bg-[#77e4ff]/15 text-3xl text-[#77e4ff]">
+              <span className="flex-center mb-3 h-14 w-14 rounded-xl bg-[#04ADE5]/15 text-3xl text-[#04ADE5]">
                 {c.icon}
               </span>
               <p className="font-display text-base font-extrabold text-white md:text-lg">
