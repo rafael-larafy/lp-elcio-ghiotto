@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useRef } from "react";
 import { TiArrowRight } from "react-icons/ti";
 
+import { kodeMono } from "@/lib/fonts";
+
 import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -102,7 +104,9 @@ const ForWhom = () => {
       <div className="container-page relative grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
         {/* Text */}
         <div className="lg:col-span-7">
-          <p className="fw-eyebrow text-xs font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
+          <p
+            className={`${kodeMono.className} fw-eyebrow text-[20px] font-bold uppercase tracking-[0.3em] text-[#04ADE5]`}
+          >
             Como funciona
           </p>
           <h2 className="fw-title mt-3 font-display text-3xl font-extrabold leading-tight text-white md:text-5xl">

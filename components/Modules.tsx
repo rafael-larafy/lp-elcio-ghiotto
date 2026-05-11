@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useState } from "react";
 import { TiArrowRight, TiPlus } from "react-icons/ti";
 
+import { kodeMono } from "@/lib/fonts";
+
 gsap.registerPlugin(ScrollTrigger);
 
 type Module = {
@@ -150,7 +152,9 @@ const ModuleCard = ({ mod, index }: { mod: Module; index: number }) => {
             {displayNumber}
           </span>
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
+            <p
+              className={`${kodeMono.className} text-[18px] font-bold uppercase tracking-[0.3em] text-[#04ADE5]`}
+            >
               Lorem · {String(displayNumber).padStart(2, "0")}
             </p>
             <h3 className="mt-1 font-display text-base font-extrabold text-white md:text-lg">
@@ -244,7 +248,9 @@ const Modules = () => {
 
       <div className="container-page relative">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mods-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-[#04ADE5]">
+          <p
+            className={`${kodeMono.className} mods-eyebrow text-[20px] font-bold uppercase tracking-[0.32em] text-[#04ADE5]`}
+          >
             Lorem ipsum dolor
           </p>
           <h2 className="mods-title mt-3 font-display text-3xl font-extrabold leading-tight md:text-5xl">

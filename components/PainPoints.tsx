@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { TiArrowRight } from "react-icons/ti";
 
+import { kodeMono } from "@/lib/fonts";
+
 import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -84,7 +86,9 @@ const PainPoints = () => {
 
       <div className="container-page relative grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
         <div>
-          <p className="pp-headline mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
+          <p
+            className={`${kodeMono.className} pp-headline mb-3 text-[20px] font-bold uppercase tracking-[0.3em] text-[#04ADE5]`}
+          >
             O hub tributário
           </p>
           <h2 className="pp-headline font-display text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl">

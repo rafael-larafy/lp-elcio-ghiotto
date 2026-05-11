@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useRef } from "react";
 import { TiArrowRight } from "react-icons/ti";
 
+import { kodeMono } from "@/lib/fonts";
+
 import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -127,7 +129,9 @@ const Hero = () => {
         <div className="lg:col-span-5">
           <div className="hero-eyebrow mb-6 flex items-center gap-3">
             <span className="h-px w-10 bg-[#04ADE5]" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#04ADE5]">
+            <span
+              className={`${kodeMono.className} text-[19px] font-semibold uppercase tracking-[0.3em] text-[#04ADE5]`}
+            >
               LaraTAX
             </span>
           </div>
