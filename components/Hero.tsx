@@ -11,10 +11,10 @@ import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HERO_DUO_SRC = `/img/${encodeURIComponent("Frame 4-3.png")}`;
+const HERO_DUO_SRC = `/img/${encodeURIComponent("Frame 4-5.png")}`;
 /** Dimensões intrínsecas do ficheiro (next/image usa isto para aspect ratio e srcset; tem de bater com o PNG real). */
-const HERO_DUO_WIDTH = 1393;
-const HERO_DUO_HEIGHT = 1080;
+const HERO_DUO_WIDTH = 1649;
+const HERO_DUO_HEIGHT = 1140;
 
 const Hero = () => {
   const containerRef = useRef<HTMLElement | null>(null);
@@ -186,8 +186,8 @@ const Hero = () => {
         </div>
 
         {/* Waldir + Elcio — arte única à direita do texto */}
-        <div className="relative flex min-h-0 min-w-0 items-center justify-center lg:col-span-7 lg:justify-end lg:overflow-visible">
-          <div className="hero-portrait w-full max-w-xl sm:max-w-2xl lg:mx-0 lg:w-[765px] lg:max-w-[725px] lg:shrink-0">
+        <div className="absolute flex min-h-0 min-w-0 items-center justify-center lg:col-span-7 lg:justify-end lg:overflow-visible pl-140">
+          <div className="hero-portrait w-full max-w-xl sm:max-w-2xl lg:mx-0 lg:w-[1065px] lg:max-w-[750px] lg:shrink-0">
             <Image
               src={HERO_DUO_SRC}
               alt="Waldir de Lara e Elcio Ghioto — sócios LaraTax"

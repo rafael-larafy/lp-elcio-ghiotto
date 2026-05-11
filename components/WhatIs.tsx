@@ -15,7 +15,7 @@ const WhatIs = () => {
 
   useGSAP(
     () => {
-      gsap.from(".wi-eyebrow, .wi-title, .wi-arrow", {
+      gsap.from(".wi-eyebrow, .wi-title", {
         y: 30,
         opacity: 0,
         duration: 0.8,
@@ -53,21 +53,6 @@ const WhatIs = () => {
         },
       });
 
-      // arrow drawing animation
-      gsap.fromTo(
-        ".wi-arrow svg path",
-        { strokeDashoffset: 200 },
-        {
-          strokeDashoffset: 0,
-          duration: 1.6,
-          ease: "power2.inOut",
-          scrollTrigger: {
-            trigger: ".wi-arrow",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
     },
     { scope: containerRef }
   );
@@ -90,75 +75,52 @@ const WhatIs = () => {
       />
 
       <div className="container-page relative">
-        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12">
-          {/* arrow icon */}
-          <div className="wi-arrow lg:col-span-3">
-            <svg
-              viewBox="0 0 200 200"
-              width="160"
-              height="160"
-              aria-hidden="true"
-              className="mx-auto md:mx-0"
-            >
-              <path
-                d="M40 150 L155 40 M70 40 L160 40 L160 130"
-                stroke="#77e4ff"
-                strokeWidth="14"
-                strokeLinecap="square"
-                fill="none"
-                strokeDasharray="200"
-              />
-            </svg>
+        <div className="wi-content mx-auto max-w-4xl text-center">
+          <p className="wi-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-white/60">
+            As maiores mentes tributárias
+          </p>
+          <h2 className="wi-title mt-3 font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+            Quem tem a missão de eliminar as{" "}
+            <span className="cyan-text">planilhas tributárias</span> no Brasil
+          </h2>
+
+          <div className="mx-auto mt-10 max-w-3xl space-y-8 text-base leading-relaxed text-white/75 md:text-lg">
+            <p className="wi-paragraph text-center">
+              <span className="mb-1 block font-bold text-white">
+                Waldir de Lara
+              </span>
+              Criador do LaraTAX e uma das maiores mentes tributárias do
+              Brasil, Waldir já recuperou{" "}
+              <span className="font-bold text-white">
+                mais de 1.8 bilhões de reais
+              </span>{" "}
+              em 20 anos de carreira e antecipou os impactos da{" "}
+              <span className="font-bold text-[#77e4ff]">
+                Reforma Tributária
+              </span>
+              .
+            </p>
+
+            <p className="wi-paragraph text-center">
+              <span className="mb-1 block font-bold text-white">
+                Elcio Ghioto
+              </span>
+              Com mais de 20 anos de experiência em consultoria tributária e
+              passagem de{" "}
+              <span className="font-bold text-white">
+                11 anos pela KPMG Brasil
+              </span>
+              , Elcio se consolidou como uma referência nacional em estratégia
+              fiscal, recuperação de créditos e planejamento tributário.
+            </p>
           </div>
 
-          {/* heading */}
-          <div className="wi-content text-center lg:col-span-9">
-            <p className="wi-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-white/60">
-              As maiores mentes tributárias
-            </p>
-            <h2 className="wi-title mt-3 font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
-              Quem tem a missão de eliminar as{" "}
-              <span className="cyan-text">planilhas tributárias</span> no Brasil
-            </h2>
-
-            <div className="mx-auto mt-10 max-w-3xl space-y-8 text-base leading-relaxed text-white/75 md:text-lg">
-              <p className="wi-paragraph text-left">
-                <span className="mb-1 block font-bold text-white">
-                  Waldir de Lara
-                </span>
-                Criador do LaraTAX e uma das maiores mentes tributárias do
-                Brasil, Waldir já recuperou{" "}
-                <span className="font-bold text-white">
-                  mais de 1.8 bilhões de reais
-                </span>{" "}
-                em 20 anos de carreira e antecipou os impactos da{" "}
-                <span className="font-bold text-[#77e4ff]">
-                  Reforma Tributária
-                </span>
-                .
-              </p>
-
-              <p className="wi-paragraph text-right">
-                <span className="mb-1 block font-bold text-white">
-                  Elcio Ghioto
-                </span>
-                Com mais de 20 anos de experiência em consultoria tributária e
-                passagem de{" "}
-                <span className="font-bold text-white">
-                  11 anos pela KPMG Brasil
-                </span>
-                , Elcio se consolidou como uma referência nacional em estratégia
-                fiscal, recuperação de créditos e planejamento tributário.
-              </p>
-            </div>
-
-            <div className="wi-cta mt-12 flex justify-center">
-              <Button
-                title="Trabalhe com as maiores mentes tributárias"
-                rightIcon={<TiArrowRight />}
-                href="#pricing"
-              />
-            </div>
+          <div className="wi-cta mt-12 flex justify-center">
+            <Button
+              title="Trabalhe com as maiores mentes tributárias"
+              rightIcon={<TiArrowRight />}
+              href="#pricing"
+            />
           </div>
         </div>
       </div>
