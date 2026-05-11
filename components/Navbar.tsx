@@ -9,11 +9,10 @@ import Button from "./Button";
 import Logo from "./Logo";
 
 const navItems = [
-  { label: "Lorem", href: "#what-is" },
-  { label: "Ipsum", href: "#for-whom" },
-  { label: "Dolor", href: "#modules" },
-  { label: "Sit", href: "#mentor" },
-  { label: "Amet", href: "#pricing" },
+  { label: "O Hub", href: "#pain" },
+  { label: "Mentes tributárias", href: "#what-is" },
+  { label: "Como funciona", href: "#for-whom" },
+  { label: "Diagnóstico", href: "#pricing" },
 ];
 
 const NavBar = () => {
@@ -57,7 +56,7 @@ const NavBar = () => {
       )}
     >
       <header className="container-page flex h-20 items-center justify-between">
-        <a href="#top" aria-label="Lorem ipsum">
+        <a href="#top" aria-label="LaraTax — voltar ao topo">
           <Logo />
         </a>
 
@@ -75,7 +74,7 @@ const NavBar = () => {
         </nav>
 
         <Button
-          title="Lorem ipsum"
+          title="Quero meu diagnóstico"
           href="#pricing"
           className="hidden sm:inline-flex"
         />

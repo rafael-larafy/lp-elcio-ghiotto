@@ -10,11 +10,14 @@ import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const PAIN_POINTS_VIDEO_SRC = `/img/${encodeURIComponent("Video LP (V2).mp4")}`;
+
 const painPoints = [
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  "Sed do eiusmod tempor incididunt ut labore et dolore magna.",
-  "Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-  "Duis aute irure dolor in reprehenderit in voluptate velit.",
+  "Baixa automática.",
+  "Processamento e cruzamento.",
+  "Controle de PER/DCOMP.",
+  "Painéis e diagnósticos.",
+  "Potencial de retificação de tributos.",
 ];
 
 const PainPoints = () => {
@@ -82,17 +85,17 @@ const PainPoints = () => {
       <div className="container-page relative grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
         <div>
           <p className="pp-headline mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#0e6f9f]">
-            Lorem ipsum
+            O hub tributário
           </p>
           <h2 className="pp-headline font-display text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl">
-            Lorem ipsum <span className="relative inline-block">
-              <span className="relative z-10">dolor sit amet</span>
+            Que transforma{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10">caos fiscal em lucro</span>
               <span
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-[#77e4ff]/70"
               />
-            </span>{" "}
-            …
+            </span>
           </h2>
 
           <ul className="pp-list mt-10 space-y-5">
@@ -124,48 +127,25 @@ const PainPoints = () => {
 
           <div className="mt-10">
             <Button
-              title="Lorem ipsum dolor"
+              title="Quero o fim das minhas planilhas"
               rightIcon={<TiArrowRight />}
-              href="#what-is"
+              href="#pricing"
             />
           </div>
         </div>
 
-        {/* video placeholder card */}
+        {/* vídeo */}
         <div ref={videoRef} className="relative">
           <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-[#012e43] ring-2 ring-[#012e43]/20 shadow-[0_30px_60px_-20px_rgba(1,46,67,0.45)]">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#024260] to-[#012e43]" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center">
-              <div className="flex-center h-20 w-20 rounded-full bg-[#77e4ff] shadow-[0_10px_40px_rgba(119,228,255,0.5)]">
-                <svg viewBox="0 0 24 24" width="36" height="36" fill="#012e43">
-                  <path d="M3 5l9 5-9 5V5z" opacity="0.95" />
-                  <path
-                    d="M16 7l5 5-5 5"
-                    stroke="#012e43"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <p className="font-display text-lg font-bold text-white">
-                Lorem ipsum dolor
-              </p>
-              <p className="text-xs uppercase tracking-[0.18em] text-white/70">
-                Sit amet consectetur
-              </p>
-            </div>
-
-            {/* volume / play overlay corners */}
-            <div className="absolute bottom-3 right-3 flex gap-2 text-xs text-white/60">
-              <span className="rounded-md bg-white/10 px-2 py-1 backdrop-blur-sm">
-                ▶
-              </span>
-              <span className="rounded-md bg-white/10 px-2 py-1 backdrop-blur-sm">
-                🔊
-              </span>
-            </div>
+            <video
+              className="h-full w-full object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              aria-label="Vídeo de apresentação LaraTax"
+            >
+              <source src={PAIN_POINTS_VIDEO_SRC} type="video/mp4" />
+            </video>
           </div>
 
           {/* cyan accent shape */}

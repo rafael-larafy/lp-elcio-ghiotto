@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Lorem ipsum dolor sit amet",
+  title: "LaraTAX",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Menos planilhas, mais resultado tributário. Diagnóstico tributário completo dos últimos 5 anos em até 40 minutos.",
 };
 
 export default function RootLayout({
