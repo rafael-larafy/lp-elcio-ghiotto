@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
+import { kodeMono } from "@/lib/fonts";
+
 import LeadForm from "./LeadForm";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -78,7 +80,9 @@ const Pricing = () => {
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
           {/* Heading column */}
           <div className="lg:col-span-6">
-            <p className="pr-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-[#04ADE5]">
+            <p
+              className={`${kodeMono.className} pr-eyebrow text-[20px] font-bold uppercase tracking-[0.32em] text-[#04ADE5]`}
+            >
               Fature com o tributário
             </p>
             <h2 className="pr-title mt-3 font-display text-3xl font-extrabold leading-tight md:text-5xl">

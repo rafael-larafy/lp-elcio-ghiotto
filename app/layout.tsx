@@ -1,20 +1,8 @@
 import type { Metadata } from "next";
-import { Manrope, Inter } from "next/font/google";
+
+import { inter, kodeMono, manrope } from "@/lib/fonts";
+
 import "./globals.css";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "LaraTAX",
@@ -30,7 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-br"
-      className={`${manrope.variable} ${inter.variable} antialiased`}
+      className={`${manrope.variable} ${inter.variable} ${kodeMono.variable} antialiased`}
     >
       <body className="relative min-h-screen w-screen overflow-x-hidden bg-[#00091a] text-white">
         {children}

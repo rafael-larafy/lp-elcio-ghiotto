@@ -11,6 +11,8 @@ import {
   TiStarFullOutline,
 } from "react-icons/ti";
 
+import { kodeMono } from "@/lib/fonts";
+
 gsap.registerPlugin(ScrollTrigger);
 
 type Testimonial = {
@@ -97,7 +99,9 @@ const Testimonials = () => {
 
       <div className="container-page relative">
         <div className="text-center">
-          <p className="tt-sub mb-3 text-xs font-bold uppercase tracking-[0.32em] text-[#04ADE5]">
+          <p
+            className={`${kodeMono.className} tt-sub mb-3 text-[20px] font-bold uppercase tracking-[0.32em] text-[#04ADE5]`}
+          >
             Lorem ipsum
           </p>
           <h2 className="tt-title font-display text-3xl font-extrabold leading-tight md:text-5xl">

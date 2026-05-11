@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { TiArrowRight } from "react-icons/ti";
 
+import { kodeMono } from "@/lib/fonts";
+
 import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -195,7 +197,9 @@ const Mentor = () => {
             <div className="card-dark relative h-full overflow-hidden rounded-[28px] border-white/5 bg-[#00091a] p-8 md:p-12">
               <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-30" />
 
-              <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#04ADE5]">
+              <p
+                className={`${kodeMono.className} text-[20px] font-bold uppercase tracking-[0.32em] text-[#04ADE5]`}
+              >
                 Lorem <span className="text-white/80">ipsum dolor sit amet</span>:
               </p>
 

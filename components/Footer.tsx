@@ -1,5 +1,7 @@
 import { FaInstagram, FaYoutube, FaWhatsapp, FaLinkedin } from "react-icons/fa";
 
+import { kodeMono } from "@/lib/fonts";
+
 import Logo from "./Logo";
 
 const socialLinks = [
@@ -30,7 +32,9 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
+            <h4
+              className={`${kodeMono.className} text-[20px] font-bold uppercase tracking-[0.3em] text-[#04ADE5]`}
+            >
               Navegação
             </h4>
             <ul className="mt-4 space-y-2 text-sm">
@@ -45,7 +49,9 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-4">
-            <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
+            <h4
+              className={`${kodeMono.className} text-[20px] font-bold uppercase tracking-[0.3em] text-[#04ADE5]`}
+            >
               Acompanhe
             </h4>
             <div className="mt-4 flex gap-3">

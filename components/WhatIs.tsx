@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { TiArrowRight } from "react-icons/ti";
 
+import { kodeMono } from "@/lib/fonts";
+
 import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -76,7 +78,9 @@ const WhatIs = () => {
 
       <div className="container-page relative">
         <div className="wi-content mx-auto max-w-4xl text-center">
-          <p className="wi-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-white/60">
+          <p
+            className={`${kodeMono.className} wi-eyebrow text-[20px] font-bold uppercase tracking-[0.32em] text-white/60`}
+          >
             As maiores mentes tributárias
           </p>
           <h2 className="wi-title mt-3 font-display text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
