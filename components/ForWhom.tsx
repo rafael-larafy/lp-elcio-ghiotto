@@ -95,14 +95,14 @@ const ForWhom = () => {
     <section
       ref={containerRef}
       id="for-whom"
-      className="relative overflow-hidden bg-[#012e43] py-24 text-white md:py-32"
+      className="relative overflow-hidden bg-[#00091a] py-24 text-white md:py-32"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-60" />
 
       <div className="container-page relative grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
         {/* Text */}
         <div className="lg:col-span-7">
-          <p className="fw-eyebrow text-xs font-bold uppercase tracking-[0.3em] text-[#9aebff]">
+          <p className="fw-eyebrow text-xs font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
             Como funciona
           </p>
           <h2 className="fw-title mt-3 font-display text-3xl font-extrabold leading-tight text-white md:text-5xl">
@@ -121,7 +121,7 @@ const ForWhom = () => {
               >
                 <span
                   aria-hidden="true"
-                  className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#77e4ff]/40 bg-[#77e4ff]/10 font-display text-sm font-extrabold tabular-nums text-[#77e4ff]"
+                  className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#04ADE5]/40 bg-[#04ADE5]/10 font-display text-sm font-extrabold tabular-nums text-[#04ADE5]"
                 >
                   {idx + 1}
                 </span>
@@ -155,17 +155,17 @@ const ForWhom = () => {
               className="object-cover"
               unoptimized
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#012e43]/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#00091a]/50 via-transparent to-transparent" />
 
             {/* cyan accents */}
             <span
               aria-hidden="true"
-              className="absolute -bottom-4 -right-4 z-10 h-14 w-14 bg-[#77e4ff]"
+              className="absolute -bottom-4 -right-4 z-10 h-14 w-14 bg-[#04ADE5]"
               style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }}
             />
             <span
               aria-hidden="true"
-              className="absolute -top-2 -left-2 z-10 h-8 w-8 bg-[#77e4ff]/80"
+              className="absolute -top-2 -left-2 z-10 h-8 w-8 bg-[#04ADE5]/80"
               style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
             />
           </div>

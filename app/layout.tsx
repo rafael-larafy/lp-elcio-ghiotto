@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="pt-br"
       className={`${manrope.variable} ${inter.variable} antialiased`}
     >
-      <body className="relative min-h-screen w-screen overflow-x-hidden bg-[#012e43] text-white">
+      <body className="relative min-h-screen w-screen overflow-x-hidden bg-[#00091a] text-white">
         {children}
       </body>
     </html>

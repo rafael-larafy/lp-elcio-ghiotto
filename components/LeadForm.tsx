@@ -13,7 +13,6 @@ type FormState = {
   company: string;
   email: string;
   phone: string;
-  revenue: string;
   taxRegime: string;
 };
 
@@ -22,7 +21,6 @@ const emptyForm: FormState = {
   company: "",
   email: "",
   phone: "",
-  revenue: "",
   taxRegime: "",
 };
 
@@ -65,7 +63,6 @@ const LeadForm = () => {
           interest: "Diagnóstico Tributário Gratuito",
           pinned_note: true,
           custom_fields: {
-            _faturamento_mensal: form.revenue,
             _regime_tributario: form.taxRegime,
           },
         }),
@@ -87,7 +84,7 @@ const LeadForm = () => {
         />
 
         <h3 className="font-display text-[1.35rem] font-bold tracking-tight text-white">
-          Solicite seu diagnóstico
+          Solicite sua demonstração
         </h3>
         <p className="mt-1.5 mb-8 text-[0.88rem] text-white/55">
           Preencha os dados e descubra quanto sua empresa pode economizar.
@@ -165,19 +162,6 @@ const LeadForm = () => {
             </div>
 
             <div>
-              <label className={labelClasses}>Faturamento mensal</label>
-              <input
-                type="text"
-                name="revenue"
-                value={form.revenue}
-                onChange={handleChange}
-                placeholder="Ex.: R$ 500 mil"
-                required
-                className={inputClasses}
-              />
-            </div>
-
-            <div>
               <label className={labelClasses}>Qual regime seu escritório atende?</label>
               <input
                 type="text"
@@ -193,11 +177,11 @@ const LeadForm = () => {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="mt-2 w-full cursor-pointer rounded-[10px] bg-cyan-300 py-4 text-[0.95rem] font-bold tracking-wide text-[#012e43] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(119,228,255,0.35)] disabled:cursor-not-allowed disabled:opacity-60"
+              className="mt-2 w-full cursor-pointer rounded-[10px] bg-cyan-300 py-4 text-[0.95rem] font-bold tracking-wide text-[#00091a] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(4, 173, 229,0.35)] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {status === "loading"
                 ? "Enviando..."
-                : "Quero meu diagnóstico gratuito →"}
+                : "Fale com um especialista"}
             </button>
           </form>
         )}

@@ -34,11 +34,11 @@ const Banner = () => {
         className="pointer-events-none absolute inset-0 opacity-15"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(1,46,67,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(1,46,67,0.22) 1px, transparent 1px)",
+            "linear-gradient(rgba(0, 9, 26,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 9, 26,0.22) 1px, transparent 1px)",
           backgroundSize: "30px 30px",
         }}
       />
-      <p className="banner-text relative text-center font-display text-sm font-medium tracking-wide text-[#012e43] md:text-base">
+      <p className="banner-text relative text-center font-display text-sm font-medium tracking-wide text-[#00091a] md:text-base">
         Lorem ipsum dolor sit amet.{" "}
         <span className="font-extrabold">
           Consectetur adipiscing elit, sed do eiusmod tempor!

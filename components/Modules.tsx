@@ -135,7 +135,7 @@ const ModuleCard = ({ mod, index }: { mod: Module; index: number }) => {
   const displayNumber = index + 1;
 
   return (
-    <div className="mod-card-inner ca-mod-card card-cyan-border overflow-hidden rounded-2xl border-2 border-[#77e4ff]/55 bg-[#013a52] shadow-[0_0_24px_-8px_rgba(119,228,255,0.35)] transition-shadow duration-300 hover:border-[#77e4ff]/90 hover:shadow-[0_0_32px_-6px_rgba(119,228,255,0.45)]">
+    <div className="mod-card-inner ca-mod-card card-cyan-border overflow-hidden rounded-2xl border-2 border-[#04ADE5]/55 bg-[#00091a] shadow-[0_0_24px_-8px_rgba(4, 173, 229,0.35)] transition-shadow duration-300 hover:border-[#04ADE5]/90 hover:shadow-[0_0_32px_-6px_rgba(4, 173, 229,0.45)]">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -145,12 +145,12 @@ const ModuleCard = ({ mod, index }: { mod: Module; index: number }) => {
         <div className="flex items-start gap-5">
           <span
             aria-hidden="true"
-            className="flex-center h-14 w-14 shrink-0 rounded-xl border border-[#77e4ff]/40 bg-[#012e43] font-display text-lg font-black tabular-nums text-[#77e4ff] md:h-16 md:w-16 md:text-xl"
+            className="flex-center h-14 w-14 shrink-0 rounded-xl border border-[#04ADE5]/40 bg-[#00091a] font-display text-lg font-black tabular-nums text-[#04ADE5] md:h-16 md:w-16 md:text-xl"
           >
             {displayNumber}
           </span>
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#9aebff]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
               Lorem · {String(displayNumber).padStart(2, "0")}
             </p>
             <h3 className="mt-1 font-display text-base font-extrabold text-white md:text-lg">
@@ -160,7 +160,7 @@ const ModuleCard = ({ mod, index }: { mod: Module; index: number }) => {
         </div>
         <span
           className={`flex-center h-9 w-9 shrink-0 rounded-full border border-white/15 text-white/70 transition-transform duration-300 ${
-            open ? "rotate-45 border-[#77e4ff] text-[#77e4ff]" : ""
+            open ? "rotate-45 border-[#04ADE5] text-[#04ADE5]" : ""
           }`}
         >
           <TiPlus />
@@ -178,7 +178,7 @@ const ModuleCard = ({ mod, index }: { mod: Module; index: number }) => {
                 key={idx}
                 className="flex items-start gap-3 py-1.5 text-sm text-white/75 md:text-base"
               >
-                <span className="mt-2 inline-block h-1 w-3 shrink-0 bg-[#77e4ff]" />
+                <span className="mt-2 inline-block h-1 w-3 shrink-0 bg-[#04ADE5]" />
                 <span>{topic}</span>
               </li>
             ))}
@@ -238,13 +238,13 @@ const Modules = () => {
     <section
       ref={containerRef}
       id="modules"
-      className="relative overflow-hidden bg-[#012e43] py-24 text-white md:py-32"
+      className="relative overflow-hidden bg-[#00091a] py-24 text-white md:py-32"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-40" />
 
       <div className="container-page relative">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mods-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-[#9aebff]">
+          <p className="mods-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-[#04ADE5]">
             Lorem ipsum dolor
           </p>
           <h2 className="mods-title mt-3 font-display text-3xl font-extrabold leading-tight md:text-5xl">

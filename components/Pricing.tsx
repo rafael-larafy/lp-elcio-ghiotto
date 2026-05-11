@@ -46,7 +46,7 @@ const Pricing = () => {
     <section
       ref={containerRef}
       id="pricing"
-      className="relative overflow-hidden bg-[#012e43] py-24 text-white md:py-32"
+      className="relative overflow-hidden bg-[#00091a] py-24 text-white md:py-32"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-fade opacity-50" />
 
@@ -57,7 +57,7 @@ const Pricing = () => {
         preserveAspectRatio="xMidYMid meet"
         aria-hidden="true"
       >
-        <g fill="none" stroke="#77e4ff" strokeWidth="1.4">
+        <g fill="none" stroke="#04ADE5" strokeWidth="1.4">
           <line x1="0" y1="350" x2="600" y2="350" />
           <line x1="0" y1="280" x2="600" y2="280" />
           <line x1="0" y1="210" x2="600" y2="210" />
@@ -67,7 +67,7 @@ const Pricing = () => {
         <polyline
           points="0,310 80,280 160,290 240,220 320,200 400,140 480,90 560,40"
           fill="none"
-          stroke="#77e4ff"
+          stroke="#04ADE5"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -78,8 +78,8 @@ const Pricing = () => {
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
           {/* Heading column */}
           <div className="lg:col-span-6">
-            <p className="pr-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-[#9aebff]">
-              Diagnóstico tributário
+            <p className="pr-eyebrow text-xs font-bold uppercase tracking-[0.32em] text-[#04ADE5]">
+              Fature com o tributário
             </p>
             <h2 className="pr-title mt-3 font-display text-3xl font-extrabold leading-tight md:text-5xl">
               Quem já preencheu esse formulário{" "}
@@ -88,21 +88,21 @@ const Pricing = () => {
               </span>
             </h2>
             <p className="pr-sub mt-6 max-w-md text-base leading-relaxed text-white/70 md:text-lg">
-              Em poucos minutos, descubra quanto sua empresa pode recuperar e
-              economizar em tributos. Sem compromisso, sem custo.
+              Em poucos minutos, descubra quanto seu escritório pode faturar com recuperação de
+              tributos.
             </p>
 
             <ul className="pr-sub mt-8 space-y-3 text-sm text-white/65 md:text-base">
               <li className="flex items-center gap-3">
-                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#77e4ff]" />
+                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#04ADE5]" />
                 Análise dos últimos 5 anos em até 40 minutos
               </li>
               <li className="flex items-center gap-3">
-                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#77e4ff]" />
+                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#04ADE5]" />
                 Diagnóstico completo de oportunidades fiscais
               </li>
               <li className="flex items-center gap-3">
-                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#77e4ff]" />
+                <span className="inline-block h-1.5 w-3 shrink-0 bg-[#04ADE5]" />
                 Atendimento por especialistas tributários
               </li>
             </ul>

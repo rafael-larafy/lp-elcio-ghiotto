@@ -61,7 +61,7 @@ const WhatIs = () => {
     <section
       ref={containerRef}
       id="what-is"
-      className="relative overflow-hidden bg-[#012e43] py-28 text-white md:py-36"
+      className="relative overflow-hidden bg-[#00091a] py-28 text-white md:py-36"
     >
       <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
 
@@ -70,7 +70,7 @@ const WhatIs = () => {
         className="pointer-events-none absolute left-1/2 top-1/3 -z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-25 blur-3xl"
         style={{
           background:
-            "radial-gradient(circle at center, rgba(119,228,255,0.55) 0%, rgba(119,228,255,0) 70%)",
+            "radial-gradient(circle at center, rgba(4, 173, 229,0.55) 0%, rgba(4, 173, 229,0) 70%)",
         }}
       />
 
@@ -95,7 +95,7 @@ const WhatIs = () => {
                 mais de 1.8 bilhões de reais
               </span>{" "}
               em 20 anos de carreira e antecipou os impactos da{" "}
-              <span className="font-bold text-[#77e4ff]">
+              <span className="font-bold text-[#04ADE5]">
                 Reforma Tributária
               </span>
               .

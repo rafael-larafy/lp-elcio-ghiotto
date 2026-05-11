@@ -70,21 +70,21 @@ const PainPoints = () => {
     <section
       ref={containerRef}
       id="pain"
-      className="relative overflow-hidden bg-gradient-to-b from-[#f0f8fc] to-[#d8ecf5] py-24 text-[#012e43]"
+      className="relative overflow-hidden bg-[#ffffff] py-24 text-[#00091a]"
     >
       {/* faint grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-50"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(1,46,67,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(1,46,67,0.06) 1px, transparent 1px)",
+            "linear-gradient(rgba(0, 9, 26,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 9, 26,0.06) 1px, transparent 1px)",
           backgroundSize: "70px 70px",
         }}
       />
 
       <div className="container-page relative grid grid-cols-1 items-center gap-14 lg:grid-cols-2">
         <div>
-          <p className="pp-headline mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#0e6f9f]">
+          <p className="pp-headline mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
             O hub tributário
           </p>
           <h2 className="pp-headline font-display text-3xl font-extrabold leading-tight md:text-4xl lg:text-5xl">
@@ -93,7 +93,7 @@ const PainPoints = () => {
               <span className="relative z-10">caos fiscal em lucro</span>
               <span
                 aria-hidden="true"
-                className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-[#77e4ff]/70"
+                className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-[#04ADE5]/70"
               />
             </span>
           </h2>
@@ -102,11 +102,11 @@ const PainPoints = () => {
             {painPoints.map((text, idx) => (
               <li
                 key={idx}
-                className="pp-item flex items-start gap-4 text-base text-[#012e43]/85 md:text-lg"
+                className="pp-item flex items-start gap-4 text-base text-[#00091a]/85 md:text-lg"
               >
                 <span
                   aria-hidden="true"
-                  className="mt-1.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#012e43] text-[#77e4ff]"
+                  className="mt-1.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00091a] text-[#04ADE5]"
                 >
                   <svg
                     viewBox="0 0 14 14"
@@ -116,8 +116,9 @@ const PainPoints = () => {
                     stroke="currentColor"
                     strokeWidth="2.5"
                     strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
-                    <path d="M2 2 L12 12 M12 2 L2 12" />
+                    <path d="M2 7.5 L6 11 L12 3" />
                   </svg>
                 </span>
                 <span>{text}</span>
@@ -136,10 +137,13 @@ const PainPoints = () => {
 
         {/* vídeo */}
         <div ref={videoRef} className="relative">
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-[#012e43] ring-2 ring-[#012e43]/20 shadow-[0_30px_60px_-20px_rgba(1,46,67,0.45)]">
+          <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-[#00091a] ring-2 ring-[#00091a]/20 shadow-[0_30px_60px_-20px_rgba(0, 9, 26,0.45)]">
             <video
               className="h-full w-full object-cover"
               controls
+              autoPlay
+              muted
+              loop
               playsInline
               preload="metadata"
               aria-label="Vídeo de apresentação LaraTax"
@@ -151,7 +155,7 @@ const PainPoints = () => {
           {/* cyan accent shape */}
           <div
             aria-hidden="true"
-            className="absolute -bottom-5 -right-5 h-16 w-16 rounded-md bg-[#77e4ff]"
+            className="absolute -bottom-5 -right-5 h-16 w-16 rounded-md bg-[#04ADE5]"
             style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }}
           />
         </div>

@@ -18,7 +18,7 @@ const navLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#012e43] py-14 text-white/70">
+    <footer className="relative bg-[#00091a] py-14 text-white/70">
       <div className="container-page">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -30,13 +30,13 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#9aebff]">
+            <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
               Navegação
             </h4>
             <ul className="mt-4 space-y-2 text-sm">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="hover:text-[#77e4ff]">
+                  <a href={link.href} className="hover:text-[#04ADE5]">
                     {link.label}
                   </a>
                 </li>
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
 
           <div className="md:col-span-4">
-            <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#9aebff]">
+            <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-[#04ADE5]">
               Acompanhe
             </h4>
             <div className="mt-4 flex gap-3">
@@ -55,7 +55,7 @@ const Footer = () => {
                   href={link.href}
                   aria-label={link.label}
                   className="flex-center h-10 w-10 rounded-full border border-white/15 text-white/80
-                             transition-colors duration-300 hover:border-[#77e4ff] hover:text-[#77e4ff]"
+                             transition-colors duration-300 hover:border-[#04ADE5] hover:text-[#04ADE5]"
                 >
                   {link.icon}
                 </a>

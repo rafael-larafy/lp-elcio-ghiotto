@@ -81,17 +81,17 @@ const Hero = () => {
     <section
       id="top"
       ref={containerRef}
-      className="relative isolate overflow-x-visible overflow-y-visible bg-[linear-gradient(180deg,rgba(1,46,67,1)_16%,rgba(119,228,255,1)_100%)] pt-32 pb-24 md:pt-36 md:pb-32"
+      className="relative isolate overflow-x-visible overflow-y-visible bg-[linear-gradient(180deg,rgba(0, 9, 26,1)_16%,rgba(4, 173, 229,1)_100%)] pt-32 pb-24 md:pt-36 md:pb-32"
     >
       {/* grid background */}
       <div className="hero-bg-grid pointer-events-none absolute inset-0 -z-10 bg-grid-fade" />
 
       {/* cyan ambient glow on the right */}
       <div
-        className="pointer-events-none absolute -right-32 top-1/2 -z-10 h-[640px] w-[640px] -translate-y-1/2 rounded-full border border-black opacity-60 blur-3xl"
+        className="pointer-events-none absolute -right-32 top-1/2 -z-10 h-[640px] w-[640px] -translate-y-1/2 rounded-full border border-[#00091a] opacity-60 blur-3xl"
         style={{
           background:
-            "radial-gradient(circle at center, rgba(119,228,255,0.35) 0%, rgba(119,228,255,0) 70%)",
+            "radial-gradient(circle at center, rgba(4, 173, 229,0.35) 0%, rgba(4, 173, 229,0) 70%)",
         }}
       />
 
@@ -102,7 +102,7 @@ const Hero = () => {
         preserveAspectRatio="xMidYMid meet"
         aria-hidden="true"
       >
-        <g fill="none" stroke="#77e4ff" strokeWidth="1.5">
+        <g fill="none" stroke="#04ADE5" strokeWidth="1.5">
           <line className="hero-chart-line" x1="0" y1="350" x2="600" y2="350" />
           <line className="hero-chart-line" x1="0" y1="300" x2="600" y2="300" />
           <line className="hero-chart-line" x1="0" y1="250" x2="600" y2="250" />
@@ -115,7 +115,7 @@ const Hero = () => {
           className="hero-chart-line"
           points="0,310 80,280 160,290 240,220 320,200 400,140 480,90 560,40"
           fill="none"
-          stroke="#77e4ff"
+          stroke="#04ADE5"
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -126,8 +126,8 @@ const Hero = () => {
         {/* TEXT COLUMN — 5 colunas para liberar mais largura à imagem (+500px) */}
         <div className="lg:col-span-5">
           <div className="hero-eyebrow mb-6 flex items-center gap-3">
-            <span className="h-px w-10 bg-[#77e4ff]" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#9aebff]">
+            <span className="h-px w-10 bg-[#04ADE5]" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#04ADE5]">
               LaraTAX
             </span>
           </div>
@@ -143,7 +143,7 @@ const Hero = () => {
             <li className="flex items-start gap-4">
               <span
                 aria-hidden="true"
-                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#77e4ff]/30 bg-[#77e4ff]/10 text-lg shadow-[0_0_24px_-8px_rgba(119,228,255,0.6)]"
+                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#04ADE5]/30 bg-[#04ADE5]/10 text-lg shadow-[0_0_24px_-8px_rgba(4, 173, 229,0.6)]"
               >
                 ⏰
               </span>
@@ -160,7 +160,7 @@ const Hero = () => {
             <li className="flex items-start gap-4">
               <span
                 aria-hidden="true"
-                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#77e4ff]/30 bg-[#77e4ff]/10 text-lg shadow-[0_0_24px_-8px_rgba(119,228,255,0.6)]"
+                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#04ADE5]/30 bg-[#04ADE5]/10 text-lg shadow-[0_0_24px_-8px_rgba(4, 173, 229,0.6)]"
               >
                 🤖
               </span>
@@ -178,7 +178,7 @@ const Hero = () => {
 
           <div className="hero-cta mt-9">
             <Button
-              title="Quero meu diagnóstico"
+              title="Quero faturar com tributário"
               rightIcon={<TiArrowRight />}
               href="#pricing"
             />
@@ -195,7 +195,7 @@ const Hero = () => {
               height={HERO_DUO_HEIGHT}
               priority
               unoptimized
-              className="h-auto w-full select-none object-contain drop-shadow-[0_14px_32px_rgba(0,0,0,0.28)]"
+              className="h-auto w-full select-none object-contain drop-shadow-[0_14px_32px_rgba(0, 9, 26,0.28)]"
             />
           </div>
         </div>
@@ -218,11 +218,11 @@ const Hero = () => {
             return [...words, ...words].map((text, idx) => (
               <span
                 key={idx}
-                className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-[#77e4ff]/40 bg-white/95 px-4 py-2 text-[13px] font-semibold leading-none text-[#012e43] shadow-[0_10px_28px_-14px_rgba(1,46,67,0.55)] backdrop-blur-sm"
+                className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-[#04ADE5]/40 bg-white/95 px-4 py-2 text-[13px] font-semibold leading-none text-[#00091a] shadow-[0_10px_28px_-14px_rgba(0, 9, 26,0.55)] backdrop-blur-sm"
               >
                 <span
                   aria-hidden="true"
-                  className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#012e43] text-[#77e4ff]"
+                  className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#00091a] text-[#04ADE5]"
                 >
                   <svg
                     viewBox="0 0 14 14"
