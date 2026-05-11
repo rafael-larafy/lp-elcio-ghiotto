@@ -141,10 +141,12 @@ const PainPoints = () => {
             <video
               className="h-full w-full object-cover"
               controls
+              autoPlay
+              muted
+              loop
               playsInline
               preload="metadata"
               aria-label="Vídeo de apresentação LaraTax"
-              autoPlay="undefined"
             >
               <source src={PAIN_POINTS_VIDEO_SRC} type="video/mp4" />
             </video>
