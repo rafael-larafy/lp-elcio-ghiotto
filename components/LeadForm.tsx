@@ -178,13 +178,13 @@ const LeadForm = () => {
             </div>
 
             <div>
-              <label className={labelClasses}>Regime tributário</label>
+              <label className={labelClasses}>Qual regime seu escritório atende?</label>
               <input
                 type="text"
                 name="taxRegime"
                 value={form.taxRegime}
                 onChange={handleChange}
-                placeholder="Ex.: Simples Nacional"
+                placeholder="Ex.: Lucro Real"
                 required
                 className={inputClasses}
               />
