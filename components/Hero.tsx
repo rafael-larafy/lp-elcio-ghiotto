@@ -178,7 +178,7 @@ const Hero = () => {
 
           <div className="hero-cta mt-9">
             <Button
-              title="Lorem ipsum"
+              title="Quero meu diagnóstico"
               rightIcon={<TiArrowRight />}
               href="#pricing"
             />
@@ -201,36 +201,45 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* cyan scrolling marquee strip */}
+      {/* word marquee — pain-point pills (mesmo X dos itens da seção PainPoints) */}
       <div className="relative mt-24 overflow-hidden">
-        <div className="flex w-max marquee py-3">
-          {Array.from({ length: 2 }).map((_, repeat) => (
-            <div
-              key={repeat}
-              className="flex shrink-0 items-center gap-3 px-3"
-            >
-              {[
-                "Limite de dados",
-                "Impossível escalar",
-                "Operação inconsistente",
-                "Muitos erros humanos",
-                "Processos manuais",
-                "Falta de visibilidade",
-                "Risco operacional",
-                "Retrabalho constante",
-              ].map((text, idx) => (
+        <div className="flex w-max marquee items-center gap-3 py-3">
+          {(() => {
+            const words = [
+              "Limite de dados",
+              "Impossível escalar",
+              "Operação inconsistente",
+              "Muitos erros humanos",
+              "Processos manuais",
+              "Falta de visibilidade",
+              "Risco operacional",
+              "Retrabalho constante",
+            ];
+            return [...words, ...words].map((text, idx) => (
+              <span
+                key={idx}
+                className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-[#77e4ff]/40 bg-white/95 px-4 py-2 text-[13px] font-semibold leading-none text-[#012e43] shadow-[0_10px_28px_-14px_rgba(1,46,67,0.55)] backdrop-blur-sm"
+              >
                 <span
-                  key={idx}
-                  className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#0f4459] px-3.5 py-1.5 text-[13px] leading-none text-[#0f4459]"
+                  aria-hidden="true"
+                  className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#012e43] text-[#77e4ff]"
                 >
-                  <span aria-hidden="true" className="opacity-60">
-                    x
-                  </span>
-                  <span>{text}</span>
+                  <svg
+                    viewBox="0 0 14 14"
+                    width="8"
+                    height="8"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  >
+                    <path d="M2 2 L12 12 M12 2 L2 12" />
+                  </svg>
                 </span>
-              ))}
-            </div>
-          ))}
+                <span>{text}</span>
+              </span>
+            ));
+          })()}
         </div>
       </div>
 
