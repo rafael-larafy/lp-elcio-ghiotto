@@ -18,6 +18,19 @@ const HERO_DUO_SRC = `/img/${encodeURIComponent("Frame 4-5.png")}`;
 const HERO_DUO_WIDTH = 1649;
 const HERO_DUO_HEIGHT = 1140;
 
+const HERO_MARQUEE_WORDS = [
+  "Limite de dados",
+  "Impossível escalar",
+  "Operação inconsistente",
+  "Muitos erros humanos",
+  "Processos manuais",
+  "Falta de visibilidade",
+  "Risco operacional",
+  "Retrabalho constante",
+] as const;
+
+const HERO_MARQUEE_HALF_CYCLES = 6;
+
 const Hero = () => {
   const containerRef = useRef<HTMLElement | null>(null);
 
@@ -83,7 +96,7 @@ const Hero = () => {
     <section
       id="top"
       ref={containerRef}
-      className="relative isolate overflow-x-visible overflow-y-visible bg-[linear-gradient(180deg,rgba(0, 9, 26,1)_16%,rgba(4, 173, 229,1)_100%)] pt-32 pb-24 md:pt-36 md:pb-32"
+      className="relative isolate overflow-x-visible overflow-y-visible bg-[linear-gradient(180deg,rgba(0, 9, 26,1)_16%,rgba(4, 173, 229,1)_100%)] pt-32 pb-24 md:pt-36 md:pb-20"
     >
       {/* grid background */}
       <div className="hero-bg-grid pointer-events-none absolute inset-0 -z-10 bg-grid-fade" />
@@ -207,21 +220,15 @@ const Hero = () => {
 
       {/* word marquee — pain-point pills (mesmo X dos itens da seção PainPoints) */}
       <div className="relative mt-24 overflow-hidden">
-        <div className="flex w-max marquee items-center gap-3 py-3">
+        <div className="flex w-max marquee will-change-transform items-center gap-3 py-3 [backface-visibility:hidden]">
           {(() => {
-            const words = [
-              "Limite de dados",
-              "Impossível escalar",
-              "Operação inconsistente",
-              "Muitos erros humanos",
-              "Processos manuais",
-              "Falta de visibilidade",
-              "Risco operacional",
-              "Retrabalho constante",
-            ];
-            return [...words, ...words].map((text, idx) => (
+            const half = Array.from({ length: HERO_MARQUEE_HALF_CYCLES }, () => [
+              ...HERO_MARQUEE_WORDS,
+            ]).flat();
+            const sequence = [...half, ...half];
+            return sequence.map((text, idx) => (
               <span
-                key={idx}
+                key={`marquee-${idx}`}
                 className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-[#04ADE5]/40 bg-white/95 px-4 py-2 text-[13px] font-semibold leading-none text-[#00091a] shadow-[0_10px_28px_-14px_rgba(0, 9, 26,0.55)] backdrop-blur-sm"
               >
                 <span
