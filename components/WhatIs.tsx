@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 import { useRef } from "react";
 import { TiArrowRight } from "react-icons/ti";
 
@@ -11,6 +12,10 @@ import { kodeMono } from "@/lib/fonts";
 import Button from "./Button";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const WHAT_IS_BG = "/img/what-is-founders.png";
+/** Largura máxima do fundo (px): em ecrãs grandes deixa de escalar; em ecrãs estreitos usa 100%. */
+const WHAT_IS_BG_MAX_W_PX = 1524;
 
 const WhatIs = () => {
   const containerRef = useRef<HTMLElement | null>(null);
@@ -65,18 +70,39 @@ const WhatIs = () => {
       id="what-is"
       className="relative overflow-hidden bg-[#00091a] py-28 text-white md:py-36"
     >
-      <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src={WHAT_IS_BG}
+          alt=""
+          width={2048}
+          height={1152}
+          unoptimized
+          className="absolute left-1/2 top-1/2 w-full max-w-none -translate-x-1/2 -translate-y-1/2 select-none"
+          style={{
+            maxWidth: WHAT_IS_BG_MAX_W_PX,
+            width: "100%",
+            height: "auto",
+          }}
+        />
+      </div>
+      {/* vignette: darker on the sides (where the portraits sit), lighter in the middle for the highlight */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#00091a]/20 via-[#00091a]/50 to-[#00091a]/20"
+      />
+
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-grid-fade" />
 
       {/* cyan ambient */}
       <div
-        className="pointer-events-none absolute left-1/2 top-1/3 -z-0 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-25 blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-1/3 z-[2] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-25 blur-3xl"
         style={{
           background:
             "radial-gradient(circle at center, rgba(4, 173, 229,0.55) 0%, rgba(4, 173, 229,0) 70%)",
         }}
       />
 
-      <div className="container-page relative">
+      <div className="container-page relative z-10">
         <div className="wi-content mx-auto max-w-4xl text-center">
           <p
             className={`${kodeMono.className} wi-eyebrow text-[20px] font-bold uppercase tracking-[0.32em] text-white/60`}
@@ -89,7 +115,7 @@ const WhatIs = () => {
           </h2>
 
           <div className="mx-auto mt-10 max-w-3xl space-y-8 text-base leading-relaxed text-white/75 md:text-lg">
-            <p className="wi-paragraph text-center">
+            <p className="wi-paragraph text-left">
               <span className="mb-1 block font-bold text-white">
                 Waldir de Lara
               </span>
@@ -105,7 +131,7 @@ const WhatIs = () => {
               .
             </p>
 
-            <p className="wi-paragraph text-center">
+            <p className="wi-paragraph text-right">
               <span className="mb-1 block font-bold text-white">
                 Elcio Ghioto
               </span>
@@ -121,7 +147,7 @@ const WhatIs = () => {
 
           <div className="wi-cta mt-12 flex justify-center">
             <Button
-              title="Trabalhe com as maiores mentes tributárias"
+              title="Trabalhe como as maiores mentes tributárias"
               rightIcon={<TiArrowRight />}
               href="#pricing"
             />
