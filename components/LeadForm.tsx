@@ -87,7 +87,7 @@ const LeadForm = () => {
           Solicite sua demonstração
         </h3>
         <p className="mt-1.5 mb-8 text-[0.88rem] text-white/55">
-          Preencha os dados e descubra quanto sua empresa pode economizar.
+          Preencha os dados e descubra quanto seu escritório pode economizar.
         </p>
 
         {status === "success" ? (
