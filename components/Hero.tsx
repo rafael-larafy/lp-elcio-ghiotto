@@ -66,16 +66,38 @@ const Hero = () => {
           "-=0.85"
         )
         .from(
-          ".hero-chart-line",
+          ".hero-chart-grid-line",
           {
-            scaleX: 0,
-            transformOrigin: "left center",
-            duration: 1.4,
-            ease: "power2.inOut",
-            stagger: 0.08,
+            y: 28,
+            opacity: 0,
+            duration: 0.55,
+            ease: "power2.out",
+            stagger: { each: 0.055, from: "start" },
           },
           "-=1"
         );
+
+      const root = containerRef.current;
+      const poly = root?.querySelector<SVGPolylineElement>(".hero-chart-poly");
+      if (poly) {
+        const len = poly.getTotalLength();
+        if (len > 0) {
+          gsap.set(poly, {
+            strokeDasharray: len,
+            strokeDashoffset: len,
+            opacity: 1,
+          });
+          tl.to(
+            poly,
+            {
+              strokeDashoffset: 0,
+              duration: 1.25,
+              ease: "power2.inOut",
+            },
+            "-=0.9"
+          );
+        }
+      }
 
       // grid + chart parallax on scroll
       gsap.to(".hero-bg-grid", {
@@ -118,16 +140,30 @@ const Hero = () => {
         aria-hidden="true"
       >
         <g fill="none" stroke="#04ADE5" strokeWidth="1.5">
-          <line className="hero-chart-line" x1="0" y1="350" x2="600" y2="350" />
-          <line className="hero-chart-line" x1="0" y1="300" x2="600" y2="300" />
-          <line className="hero-chart-line" x1="0" y1="250" x2="600" y2="250" />
-          <line className="hero-chart-line" x1="0" y1="200" x2="600" y2="200" />
-          <line className="hero-chart-line" x1="0" y1="150" x2="600" y2="150" />
-          <line className="hero-chart-line" x1="0" y1="100" x2="600" y2="100" />
-          <line className="hero-chart-line" x1="0" y1="50" x2="600" y2="50" />
+          <g className="hero-chart-grid-line">
+            <line x1="0" y1="350" x2="600" y2="350" />
+          </g>
+          <g className="hero-chart-grid-line">
+            <line x1="0" y1="300" x2="600" y2="300" />
+          </g>
+          <g className="hero-chart-grid-line">
+            <line x1="0" y1="250" x2="600" y2="250" />
+          </g>
+          <g className="hero-chart-grid-line">
+            <line x1="0" y1="200" x2="600" y2="200" />
+          </g>
+          <g className="hero-chart-grid-line">
+            <line x1="0" y1="150" x2="600" y2="150" />
+          </g>
+          <g className="hero-chart-grid-line">
+            <line x1="0" y1="100" x2="600" y2="100" />
+          </g>
+          <g className="hero-chart-grid-line">
+            <line x1="0" y1="50" x2="600" y2="50" />
+          </g>
         </g>
         <polyline
-          className="hero-chart-line"
+          className="hero-chart-poly"
           points="0,310 80,280 160,290 240,220 320,200 400,140 480,90 560,40"
           fill="none"
           stroke="#04ADE5"
