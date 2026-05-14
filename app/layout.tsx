@@ -20,6 +20,12 @@ export default function RootLayout({
       lang="pt-br"
       className={`${manrope.variable} ${inter.variable} ${kodeMono.variable} antialiased`}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=clock_arrow_up,robot_2"
+        />
+      </head>
       <body className="relative min-h-screen w-screen overflow-x-hidden bg-[#00091a] text-white">
         {children}
       </body>
