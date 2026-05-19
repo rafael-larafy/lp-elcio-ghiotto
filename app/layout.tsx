@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { inter, kodeMono, manrope } from "@/lib/fonts";
+import SmoothScroll from "@/components/SmoothScroll";
 
 import "./globals.css";
 
@@ -27,7 +28,7 @@ export default function RootLayout({
         />
       </head>
       <body className="relative min-h-screen w-screen overflow-x-hidden bg-[#00091a] text-white">
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
