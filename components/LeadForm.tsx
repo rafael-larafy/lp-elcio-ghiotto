@@ -13,7 +13,7 @@ type FormState = {
   company: string;
   email: string;
   phone: string;
-  taxRegime: string;
+  taxRecovery: string;
 };
 
 const emptyForm: FormState = {
@@ -21,7 +21,7 @@ const emptyForm: FormState = {
   company: "",
   email: "",
   phone: "",
-  taxRegime: "",
+  taxRecovery: "",
 };
 
 const formatPhone = (value: string) => {
@@ -52,7 +52,7 @@ const LeadForm = () => {
     setStatus("loading");
 
     try {
-      await fetch("/api/leads", {
+      const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -63,10 +63,13 @@ const LeadForm = () => {
           interest: "Diagnóstico Tributário Gratuito",
           pinned_note: true,
           custom_fields: {
-            _regime_tributario: form.taxRegime,
+            _recuperacao_tributaria: form.taxRecovery,
           },
         }),
       });
+
+      const data = await res.json().catch(() => ({}));
+      console.log("Resposta:", res.status, data);
     } catch (err) {
       console.error("Erro ao enviar lead:", err);
     }
@@ -84,10 +87,10 @@ const LeadForm = () => {
         />
 
         <h3 className="font-display text-[1.35rem] font-bold tracking-tight text-white">
-          Solicite sua demonstração
+          Solicite seu diagnóstico
         </h3>
-        <p className="mt-1.5 mb-8 text-[0.88rem] text-white/55">
-          Preencha os dados e descubra quanto seu escritório pode faturar.
+        <p className="mt-1.5 mb-8 text-[0.88rem] text-white/50">
+          Preencha os dados e descubra quanto sua empresa pode economizar.
         </p>
 
         {status === "success" ? (
@@ -95,7 +98,7 @@ const LeadForm = () => {
             <p className="mb-2 text-[1.2rem] font-bold text-cyan-300">
               Dados enviados com sucesso!
             </p>
-            <p className="text-[0.9rem] text-white/55">
+            <p className="text-[0.9rem] text-white/50">
               Em breve nossa equipe entrará em contato.
             </p>
             <button
@@ -162,31 +165,52 @@ const LeadForm = () => {
             </div>
 
             <div>
-              <label className={labelClasses}>Qual regime seu escritório atende?</label>
-              <input
-                type="text"
-                name="taxRegime"
-                value={form.taxRegime}
-                onChange={handleChange}
-                placeholder="Ex.: Lucro Real"
-                required
-                className={inputClasses}
-              />
+              <label className={labelClasses}>
+                Você faz recuperação tributária?
+              </label>
+              <div className="flex gap-3">
+                {(["Sim", "Não"] as const).map((option) => {
+                  const checked = form.taxRecovery === option;
+                  return (
+                    <label
+                      key={option}
+                      className={`flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-[10px] border px-4 py-3 transition-all duration-300 ${
+                        checked
+                          ? "border-cyan-300 bg-cyan-300/[0.12] text-white"
+                          : "border-cyan-300/20 bg-white/[0.06] text-white/70 hover:border-cyan-300/40"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="taxRecovery"
+                        value={option}
+                        checked={checked}
+                        onChange={handleChange}
+                        required
+                        className="sr-only"
+                      />
+                      <span className="text-[0.95rem] font-medium">
+                        {option}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
             </div>
 
             <button
               type="submit"
               disabled={status === "loading"}
-              className="mt-2 w-full cursor-pointer rounded-[10px] bg-cyan-300 py-4 text-[0.95rem] font-bold tracking-wide text-[#00091a] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(4, 173, 229,0.35)] disabled:cursor-not-allowed disabled:opacity-60"
+              className="mt-2 w-full cursor-pointer rounded-[10px] bg-cyan-300 py-4 text-[0.95rem] font-bold tracking-wide text-[#00091a] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(4,173,229,0.35)] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {status === "loading"
                 ? "Enviando..."
-                : "Fale com um especialista"}
+                : "Quero meu diagnóstico gratuito →"}
             </button>
           </form>
         )}
 
-        <p className="mt-4 text-center text-[0.72rem] leading-relaxed text-white/35">
+        <p className="mt-4 text-center text-[0.72rem] leading-relaxed text-white/30">
           Seus dados estão protegidos. Não compartilhamos informações com
           terceiros.
         </p>

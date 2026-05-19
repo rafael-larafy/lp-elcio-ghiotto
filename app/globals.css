@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Use `material-symbols-outlined` só no glifo interno. No container flex/grid,
+   essa classe do Google (display:inline-block) quebrava o alinhamento. */
+
 @theme inline {
   --color-background: #00091a;
   --color-foreground: #ffffff;

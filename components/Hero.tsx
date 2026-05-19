@@ -196,9 +196,9 @@ const Hero = () => {
             <li className="flex items-start gap-4">
               <span
                 aria-hidden="true"
-                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#04ADE5]/30 bg-[#04ADE5]/10 text-lg shadow-[0_0_24px_-8px_rgba(4, 173, 229,0.6)]"
+                className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-xl border border-[#04ADE5]/30 bg-[#04ADE5]/10 shadow-[0_0_24px_-8px_rgba(4, 173, 229,0.6)]"
               >
-                ⏰
+                <span className="material-symbols-outlined shrink-0 text-[#04ADE5]">{"clock_arrow_up"}</span>
               </span>
               <div className="border-l border-white/10 pl-4">
                 <p className="font-semibold tracking-tight text-white">
@@ -213,9 +213,9 @@ const Hero = () => {
             <li className="flex items-start gap-4">
               <span
                 aria-hidden="true"
-                className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#04ADE5]/30 bg-[#04ADE5]/10 text-lg shadow-[0_0_24px_-8px_rgba(4, 173, 229,0.6)]"
+                className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-xl border border-[#04ADE5]/30 bg-[#04ADE5]/10 shadow-[0_0_24px_-8px_rgba(4, 173, 229,0.6)]"
               >
-                🤖
+                <span className="material-symbols-outlined shrink-0 text-[#04ADE5]">{"robot_2"}</span>
               </span>
               <div className="border-l border-white/10 pl-4">
                 <p className="font-semibold tracking-tight text-white">
@@ -231,7 +231,7 @@ const Hero = () => {
 
           <div className="hero-cta mt-9">
             <Button
-              title="Quero faturar com tributário"
+              title="Quero contratar o LaraTAX"
               rightIcon={<TiArrowRight />}
               href="#pricing"
             />
@@ -255,40 +255,6 @@ const Hero = () => {
       </div>
 
       {/* word marquee — pain-point pills (mesmo X dos itens da seção PainPoints) */}
-      <div className="relative mt-24 overflow-hidden">
-        <div className="flex w-max marquee will-change-transform items-center gap-3 py-3 [backface-visibility:hidden]">
-          {(() => {
-            const half = Array.from({ length: HERO_MARQUEE_HALF_CYCLES }, () => [
-              ...HERO_MARQUEE_WORDS,
-            ]).flat();
-            const sequence = [...half, ...half];
-            return sequence.map((text, idx) => (
-              <span
-                key={`marquee-${idx}`}
-                className="inline-flex shrink-0 items-center gap-2.5 rounded-full border border-[#04ADE5]/40 bg-white/95 px-4 py-2 text-[13px] font-semibold leading-none text-[#00091a] shadow-[0_10px_28px_-14px_rgba(0, 9, 26,0.55)] backdrop-blur-sm"
-              >
-                <span
-                  aria-hidden="true"
-                  className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#00091a] text-[#04ADE5]"
-                >
-                  <svg
-                    viewBox="0 0 14 14"
-                    width="8"
-                    height="8"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  >
-                    <path d="M2 2 L12 12 M12 2 L2 12" />
-                  </svg>
-                </span>
-                <span>{text}</span>
-              </span>
-            ));
-          })()}
-        </div>
-      </div>
 
     </section>
   );
